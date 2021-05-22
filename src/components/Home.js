@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="home">
       <video muted autoPlay loop id="hero-video">
-        <source src="/Videos/y.mp4" type="video/mp4" />
+        <source src="/Videos/z.mp4" type="video/mp4" />
       </video>
       <NavLink className="hero-button-link" to="/shop">
         <button className="hero-button">SS21 Collection</button>
