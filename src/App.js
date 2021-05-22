@@ -5,6 +5,7 @@ import Cart from './components/Cart';
 import Home from './components/Home';
 import Nav from './components/Nav';
 import Shop from './components/Shop';
+import About from './components/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Shop" component={Shop} />
+          <Route exact path="/about" component={About} />
         </Switch>
       </div>
     </Router>
