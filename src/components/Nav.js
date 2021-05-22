@@ -1,6 +1,6 @@
 import React from 'react';
 import Cart from '../components/Cart';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Nav = () => {
   return (
@@ -10,15 +10,15 @@ const Nav = () => {
         <h1 className="logo">BRAND</h1>
         {/*//+ links */}
         <ul className="nav-links">
-          <Link to="/">
+          <NavLink to="/">
             <li className="nav-page">Home</li>
-          </Link>
-          <Link to="/shop">
+          </NavLink>
+          <NavLink to="/shop">
             <li className="nav-page">Shop</li>
-          </Link>
-          <Link to="/shop">
+          </NavLink>
+          <NavLink to="/shop">
             <li className="nav-page">About</li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
       {/*//+ cart */}
