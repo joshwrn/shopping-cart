@@ -1,3 +1,90 @@
-HTML {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+html {
+  background-color: #282c34;
+  color: white;
+  font-family: Helvetica, sans-serif;
+}
+
+/*? Nav */
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
   background-color: black;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-page {
+  padding: 1em;
+}
+
+/*? cart */
+
+.cart-icon {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  text-align: center;
+  background-color: black;
+  bottom: 0;
+  right: 0;
+  padding: 1em;
+  border-radius: 100%;
+  margin: 1em;
+  cursor: pointer;
+}
+
+/*? Home */
+
+.page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+}
+
+h1 {
+  align-self: center;
 }
