@@ -11,7 +11,6 @@ function App() {
     <Router>
       <div className="App">
         <Nav></Nav>
-        <Cart></Cart>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/Shop" component={Shop} />
