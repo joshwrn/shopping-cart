@@ -8,7 +8,10 @@ const Home = () => {
         <source src="/Videos/z.mp4" type="video/mp4" />
       </video>
       <NavLink className="hero-button-link" to="/shop">
-        <button className="hero-button">SS21 Collection</button>
+        <button className="hero-button">
+          <span>SS21 Collection</span>
+        </button>
+        <button className="hero-button">FW2O Collection</button>
       </NavLink>
     </div>
   );
