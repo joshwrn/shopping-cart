@@ -1,14 +1,19 @@
 import React from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCartSharp';
-import Badge from '@material-ui/core/Badge';
+import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 
-const Cart = () => {
+const Cart = (props) => {
+  const { click } = props;
   return (
     <div>
       <div id="cart-outer">
         <div id="cart">
           <div id="cart-header">
-            <ShoppingCartIcon style={{ color: 'black' }} />
+            <CloseSharpIcon
+              id="cart-close"
+              style={{ color: 'black' }}
+              onClick={click}
+            />
             <p id="total">Total: $2,229.97</p>
           </div>
           <ul id="cart-list">

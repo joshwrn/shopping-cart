@@ -25,7 +25,7 @@ const CartIcon = (props) => {
           <ShoppingCartIcon onClick={click} />
         </Badge>
       </div>
-      <Cart />
+      <Cart click={click} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import CartIcon from './CartIcon';
-import LanguageIcon from '@material-ui/icons/Language';
+import LanguageIcon from '@material-ui/icons/Twitter';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from 'react-router-dom';
 
@@ -10,30 +10,46 @@ const Nav = () => {
   const openCart = (e) => {
     e.preventDefault();
     const cart = document.getElementById('cart-outer');
+    const cartInner = document.getElementById('cart');
+    const navBg = document.getElementById('nav');
     if (cartOpen === false) {
+      //@ OPEN CART
       setCartOpen(true);
+      cartInner.style.setProperty('height', '25em');
       cart.style.setProperty('visibility', 'visible');
+      navBg.style.setProperty('background-color', 'black');
     } else if (cartOpen === true) {
+      //@ CLOSE CART
       setCartOpen(false);
-      cart.style.setProperty('visibility', 'hidden');
+      cartInner.style.setProperty('height', '0em');
+      setTimeout(function () {
+        cart.style.setProperty('visibility', 'hidden');
+      }, 1000);
+      navBg.style.setProperty('background-color', '');
     }
   };
 
   return (
-    <div className="nav">
+    <div id="nav">
       <div id="nav-left">
         <div id="nav-location">
           <LanguageIcon className="nav-lang" style={{ fontSize: '0.8rem' }} />
-          <p className="nav-text">United States</p>
+          <a
+            href="https://twitter.com/joshwrn"
+            target="_blank"
+            className="nav-text"
+          >
+            Josh Warren
+          </a>
         </div>
-        <p className="nav-text">English</p>
+        <p className="nav-text">California</p>
       </div>
-      <div className="nav-center">
+      <div id="nav-center">
         {/*//+ logo */}
         <h1 className="logo">BRAND</h1>
         {/*//+ links */}
         <ul className="nav-links">
-          <NavLink to="/">
+          <NavLink exact to="/">
             <li className="nav-page">Home</li>
           </NavLink>
           <NavLink to="/shop">
@@ -47,7 +63,7 @@ const Nav = () => {
       <div id="nav-right">
         {/*//+ cart */}
         <CartIcon click={openCart} />
-        <SearchIcon />
+        <SearchIcon id="search-icon" />
       </div>
     </div>
   );
