@@ -14,7 +14,7 @@ const CartIcon = (props) => {
   const { click } = props;
   const classes = useStyles();
   return (
-    <div>
+    <div onClick={click}>
       <div className="cart-icon">
         <Badge
           badgeContent={0}
@@ -22,7 +22,7 @@ const CartIcon = (props) => {
           color="error"
           classes={{ badge: classes.badge }}
         >
-          <ShoppingCartIcon onClick={click} />
+          <ShoppingCartIcon />
         </Badge>
       </div>
       <Cart click={click} />

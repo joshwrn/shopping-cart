@@ -1,9 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import '../styles/home.css';
 
 const Home = () => {
   return (
-    <div className="home">
+    <div id="home">
       <video muted autoPlay loop id="hero-video">
         <source src="/Videos/z.mp4" type="video/mp4" />
       </video>

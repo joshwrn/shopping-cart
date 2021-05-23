@@ -1,0 +1,50 @@
+/*! CARD */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 15em;
+  height: 25em;
+  background: rgb(7, 7, 7);
+  cursor: pointer;
+  border: 1px solid rgba(56, 56, 56, 0.603);
+  overflow: hidden;
+  border-radius: 0.2em;
+  transition: transform 0.6s;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-0.5em);
+}
+
+.card:hover .card-bottom {
+  opacity: 100%;
+}
+
+.card-image {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  object-fit: cover;
+  display: block;
+  object-position: top;
+  transition: transform 0.6s;
+  filter: brightness(70%);
+}
+
+.card-image:hover {
+  transform: scale(1.2);
+}
+
+.card-bottom {
+  position: absolute;
+  background: rgb(0, 0, 0);
+  bottom: 0;
+  width: 20em;
+  height: 10em;
+  z-index: 1;
+  opacity: 0%;
+  transition: opacity 0.5s;
+}

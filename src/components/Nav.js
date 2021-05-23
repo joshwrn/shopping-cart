@@ -3,10 +3,26 @@ import CartIcon from './CartIcon';
 import LanguageIcon from '@material-ui/icons/Twitter';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from 'react-router-dom';
+import '../styles/nav.css';
 
 const Nav = () => {
   const [cartOpen, setCartOpen] = useState(false);
 
+  //+ SCROLL FUNCTION
+
+  window.onscroll = () => {
+    const navBg = document.getElementById('nav');
+    if (
+      document.body.scrollTop >= 20 ||
+      document.documentElement.scrollTop >= 20
+    ) {
+      navBg.style.setProperty('background-color', 'black');
+    } else {
+      navBg.style.setProperty('background-color', '');
+    }
+  };
+
+  //+ CART FUNCTION
   const openCart = (e) => {
     e.preventDefault();
     const cart = document.getElementById('cart-outer');
@@ -46,7 +62,7 @@ const Nav = () => {
       </div>
       <div id="nav-center">
         {/*//+ logo */}
-        <h1 className="logo">BRAND</h1>
+        <h1 id="logo">BRAND</h1>
         {/*//+ links */}
         <ul className="nav-links">
           <NavLink exact to="/">

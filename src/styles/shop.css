@@ -1,0 +1,41 @@
+/*! SHOP */
+
+#shop,
+#shop-section {
+  z-index: -5;
+  position: relative;
+}
+
+#shop-gradient {
+  position: absolute;
+  width: 100vw;
+  height: 30em;
+  background-image: linear-gradient(transparent, rgb(0, 0, 0));
+  z-index: -1;
+}
+
+#shop-hero {
+  position: relative;
+  width: 100vw;
+  height: 30em;
+  object-fit: cover;
+  display: block;
+  z-index: -2;
+  object-position: top;
+}
+
+#shop-section {
+  display: flex;
+  justify-content: center;
+  gap: 10em;
+  flex-wrap: wrap;
+  background: rgb(0, 0, 0);
+  height: fit-content;
+  width: 100vw;
+  padding: 5em 2em 5em 2em;
+}
+
+#shop-section::after {
+  content: '';
+  width: 15em;
+}
