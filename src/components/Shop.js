@@ -12,13 +12,12 @@ const Shop = ({ cardsArray }) => {
       <div id="shop-section">
         {cards.map((item) => {
           return (
-            <Link to={`/shop/item/${item.key}`}>
+            <Link to={`/shop/item/${item.key}`} key={item.key}>
               <Card
                 title={item.title}
                 src={item.src}
                 price={item.price}
                 description={item.description}
-                key={item.key}
               />
             </Link>
           );

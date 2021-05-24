@@ -3,6 +3,7 @@ import '../styles/item.css';
 import AddIcon from '@material-ui/icons/Add';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import ScrollToTop from './functions/ScrollToTop';
 
 const Item = (props) => {
   const { match, cards } = props;
@@ -47,6 +48,7 @@ const Item = (props) => {
 
   return (
     <div id="item-page">
+      <ScrollToTop />
       <div id="item-inner">
         <img className="item-image" src={currentItem.src} alt="one" />
         <div className="item-details">
