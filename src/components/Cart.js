@@ -1,5 +1,4 @@
 import React from 'react';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCartSharp';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import '../styles/cart.css';
 
@@ -20,7 +19,7 @@ const Cart = (props) => {
           <ul id="cart-list">
             <li className="cart-item">
               <img
-                className="item-image"
+                className="cart-item-image"
                 src="/img/clothes/one.jpeg"
                 alt="item1"
               />

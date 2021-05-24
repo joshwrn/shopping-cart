@@ -17,7 +17,7 @@ const Nav = () => {
       document.documentElement.scrollTop >= 20
     ) {
       navBg.style.setProperty('background-color', 'black');
-    } else {
+    } else if (cartOpen === false) {
       navBg.style.setProperty('background-color', '');
     }
   };
@@ -41,7 +41,14 @@ const Nav = () => {
       setTimeout(function () {
         cart.style.setProperty('visibility', 'hidden');
       }, 1000);
-      navBg.style.setProperty('background-color', '');
+      if (
+        document.body.scrollTop >= 20 ||
+        document.documentElement.scrollTop >= 20
+      ) {
+        return;
+      } else {
+        navBg.style.setProperty('background-color', '');
+      }
     }
   };
 
@@ -54,6 +61,7 @@ const Nav = () => {
             href="https://twitter.com/joshwrn"
             target="_blank"
             className="nav-text"
+            rel="noreferrer"
           >
             Josh Warren
           </a>

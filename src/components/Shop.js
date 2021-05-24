@@ -8,11 +8,11 @@ const Shop = () => {
       <div id="shop-gradient"></div>
       <img id="shop-hero" src="/img/hero2.jpg" alt="hero" />
       <div id="shop-section">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        <Card cardSrc="/img/clothes/one.jpeg" />
+        <Card cardSrc="/img/clothes/two.jpeg" />
+        <Card cardSrc="/img/clothes/three.jpeg" />
+        <Card cardSrc="/img/clothes/four.jpeg" />
+        <Card cardSrc="/img/clothes/five.jpeg" />
       </div>
     </div>
   );

@@ -7,12 +7,14 @@
   width: 100%;
   position: fixed;
   background: linear-gradient(rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0));
-  transition: background 0.4s;
+  transition: 0.4s;
 }
 
 #nav:hover {
   background-color: black;
 }
+
+/*+ NAV LEFT */
 
 #nav-left {
   display: flex;
@@ -35,6 +37,7 @@
 }
 
 /*+ NAV CENTER */
+
 #nav-center {
   grid-column: 2/3;
   display: flex;
@@ -52,7 +55,7 @@
   align-self: center;
   cursor: pointer;
   letter-spacing: 0.3em;
-  text-indent: 0.3em;
+  text-indent: 0.4em;
   font-family: viola;
   padding: 0;
 }
@@ -113,7 +116,7 @@ a {
   opacity: 100%;
 }
 
-/*? left nav */
+/*+ right nav */
 
 #nav-right {
   display: flex;
@@ -124,7 +127,7 @@ a {
   padding-right: 4em;
 }
 
-/*+ cart icon */
+/*@ cart icon */
 
 .cart-icon {
   display: flex;

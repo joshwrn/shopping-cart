@@ -1,0 +1,127 @@
+/*! ITEM PAGE */
+
+#item-page,
+#item-inner {
+  z-index: -5;
+  position: relative;
+}
+
+#item-page {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+#item-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: black;
+  height: fit-content;
+  width: inherit;
+  padding: 15em 15em 15em 15em;
+}
+
+#item-inner > .item-image {
+  position: relative;
+  width: 25em;
+  height: 35em;
+  object-fit: cover;
+  display: block;
+  object-position: top;
+  transition: transform 0.6s;
+  filter: brightness(70%);
+  z-index: -1;
+}
+
+#item-inner > .item-details {
+}
+
+#item-inner > .item-details > .item-title {
+  font-size: 2rem;
+}
+
+#item-inner > .item-details > .item-price {
+  margin-bottom: 1em;
+}
+
+#item-inner > .item-details > .item-description {
+  margin-bottom: 1em;
+  font-size: 0.9rem;
+}
+
+/*+ QUANTITY */
+
+#item-form {
+  display: flex;
+  align-items: center;
+}
+
+#quantity-input {
+  padding: 0em 1em 0 1em;
+  background: transparent;
+  border: 0px solid rgba(124, 124, 124, 0.281);
+  border-radius: 10px;
+  width: 3.3em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type='number'] {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input,
+select,
+textarea {
+  color: white;
+  text-align: left;
+  font-family: helvetica;
+}
+
+input:focus {
+  background: rgba(0, 0, 0, 0.144);
+}
+
+input::placeholder {
+  color: rgb(255, 255, 255);
+  font-family: helvetica;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+/*@ ARROWS */
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-0.35em);
+  cursor: pointer;
+}
+
+.arrow-up {
+  transform: translateY(0.5em);
+}
+
+/*@ SUBMIT */
+
+#item-form > .submit-button {
+  transition: 0.25s;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  background-color: rgba(163, 163, 163, 0);
+  color: white;
+  width: 3em;
+  height: 2em;
+  margin: 3em 0 3em 0;
+}

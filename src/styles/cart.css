@@ -72,13 +72,13 @@
   color: white;
 }
 
-.item-image {
+.cart-item-image {
   width: 6em;
   height: 6em;
   object-fit: cover;
 }
 
-.item-details {
+.cart-item > .item-details {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -87,12 +87,12 @@
   padding: 1em;
 }
 
-.item-name {
+.cart-item > .item-details > .item-name {
   display: block;
   font-size: 0.8rem;
 }
 
-.item-text {
+.cart-item > .item-details .item-text {
   padding-right: 1em;
 }
 

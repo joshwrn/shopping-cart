@@ -8,6 +8,11 @@ h3 {
   box-sizing: border-box;
 }
 
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
 button:focus {
   outline: 0;
 }
