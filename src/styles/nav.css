@@ -1,4 +1,4 @@
-/*! Nav */
+/*! NAV */
 
 #nav {
   display: grid;
@@ -116,7 +116,7 @@ a {
   opacity: 100%;
 }
 
-/*+ right nav */
+/*+ RIGHT NAV */
 
 #nav-right {
   display: flex;
@@ -127,7 +127,7 @@ a {
   padding-right: 4em;
 }
 
-/*@ cart icon */
+/*@ CART ICON */
 
 .cart-icon {
   display: flex;

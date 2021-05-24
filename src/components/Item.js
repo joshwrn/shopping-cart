@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/item.css';
 import AddIcon from '@material-ui/icons/Add';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 
-const Item = () => {
+const Item = (props) => {
+  const { match, cards } = props;
   const [quantity, setQuantity] = useState(1);
+  useEffect(() => {
+    console.log(match);
+    console.log(cards);
+  }, []);
+
+  //+ get item
+  const currentItem = cards.find((item) => item.key === match.params.id);
+  console.log(currentItem);
 
   function handleChange(e) {
     const quantityInput = document.getElementById('quantity-input');
@@ -39,14 +48,11 @@ const Item = () => {
   return (
     <div id="item-page">
       <div id="item-inner">
-        <img className="item-image" src="/img/clothes/one.jpeg" alt="one" />
+        <img className="item-image" src={currentItem.src} alt="one" />
         <div className="item-details">
-          <p className="item-title">Black Gucci Dress</p>
-          <p className="item-price">$1849.99</p>
-          <p className="item-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed rhoncus
-            odio id tincidunt placerat. Nunc eget rutrum elit, at rhoncus mi.
-          </p>
+          <p className="item-title">{currentItem.title}</p>
+          <p className="item-price">{currentItem.price}</p>
+          <p className="item-description">{currentItem.description}</p>
           <form id="item-form">
             <label>Quantity:</label>
             <input
