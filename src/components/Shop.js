@@ -16,7 +16,7 @@ const Shop = ({ cardsArray }) => {
               <Card
                 title={item.title}
                 src={item.src}
-                price={item.price}
+                price={`$${item.price}`}
                 description={item.description}
               />
             </Link>

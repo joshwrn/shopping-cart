@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import '../styles/cart.css';
 
 const Cart = (props) => {
-  const { click } = props;
+  const { click, cart, setCart } = props;
+  const [total, setTotal] = useState(0);
+
+  const totalPrice = cart.reduce((add, item) => {
+    let next = parseFloat(
+      (Number(item.price) * Number(item.quantity)).toFixed(2)
+    );
+    return parseFloat(Number(add) + Number(next)).toFixed(2);
+  }, 0);
+
+  useEffect(() => {
+    setTotal(totalPrice);
+    console.log(total);
+  }, [cart]);
+
   return (
     <div>
       <div id="cart-outer">
@@ -14,23 +28,29 @@ const Cart = (props) => {
               style={{ color: 'black' }}
               onClick={click}
             />
-            <p id="total">Total: $2,229.97</p>
+            <p id="total">Total: ${total}</p>
           </div>
           <ul id="cart-list">
-            <li className="cart-item">
-              <img
-                className="cart-item-image"
-                src="/img/clothes/one.jpeg"
-                alt="item1"
-              />
-              <div className="item-details">
-                <span className="item-name">Black Gucci Dress</span>
-                <div>
-                  <span className="item-text">$1849.99</span>
-                  <span className="item-text">Quantity: 01</span>
-                </div>
-              </div>
-            </li>
+            {cart.map((item) => {
+              return (
+                <li key={item.key} className="cart-item">
+                  <img
+                    className="cart-item-image"
+                    src={item.src}
+                    alt={item.key}
+                  />
+                  <div className="item-details">
+                    <span className="item-name">{item.title}</span>
+                    <div>
+                      <span className="item-text">{`$${item.price}`}</span>
+                      <span className="item-text">
+                        Quantity: {item.quantity}
+                      </span>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

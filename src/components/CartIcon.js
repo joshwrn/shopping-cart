@@ -11,13 +11,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const CartIcon = (props) => {
-  const { click } = props;
+  const { click, cart, setCart } = props;
   const classes = useStyles();
   return (
     <div onClick={click}>
       <div className="cart-icon">
         <Badge
-          badgeContent={0}
+          badgeContent={cart.length}
           showZero
           color="error"
           classes={{ badge: classes.badge }}
@@ -25,7 +25,7 @@ const CartIcon = (props) => {
           <ShoppingCartIcon />
         </Badge>
       </div>
-      <Cart click={click} />
+      <Cart cart={cart} setCart={setCart} click={click} />
     </div>
   );
 };

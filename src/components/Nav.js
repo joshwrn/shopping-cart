@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CartIcon from './CartIcon';
 import LanguageIcon from '@material-ui/icons/Twitter';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
 
-const Nav = () => {
+const Nav = (props) => {
   const [cartOpen, setCartOpen] = useState(false);
+  const { cart, setCart } = props;
+
+  useEffect(() => {}, [cart]);
 
   //+ SCROLL FUNCTION
 
@@ -86,7 +89,7 @@ const Nav = () => {
       </div>
       <div id="nav-right">
         {/*//+ cart */}
-        <CartIcon click={openCart} />
+        <CartIcon cart={cart} setCart={setCart} click={openCart} />
         <SearchIcon id="search-icon" />
       </div>
     </div>

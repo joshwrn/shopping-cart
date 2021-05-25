@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav></Nav>
+        <Nav cart={cart} setCart={setCart}></Nav>
         <Switch>
           <Route exact path="/">
             <Home />
@@ -28,7 +28,9 @@ function App() {
           <Route
             exact
             path="/shop/item/:id"
-            render={(props) => <Item {...props} cards={cards} />}
+            render={(props) => (
+              <Item {...props} cards={cards} cart={cart} setCart={setCart} />
+            )}
           />
         </Switch>
       </div>

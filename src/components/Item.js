@@ -6,16 +6,36 @@ import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ScrollToTop from './functions/ScrollToTop';
 
 const Item = (props) => {
-  const { match, cards } = props;
+  const { match, cards, cart, setCart } = props;
   const [quantity, setQuantity] = useState(1);
-  useEffect(() => {
-    console.log(match);
-    console.log(cards);
-  }, []);
-
+  const [cartQuantity, setCartQuantity] = useState(0);
   //+ get item
   const currentItem = cards.find((item) => item.key === match.params.id);
-  console.log(currentItem);
+  const checkItem = cart.some((item) => item.key === currentItem.key);
+  const findItem = cart.findIndex((item) => item.key === currentItem.key);
+
+  const submitQuantity = (e) => {
+    e.preventDefault();
+    currentItem.quantity = quantity;
+
+    if (checkItem === false) {
+      setCart([...cart, currentItem]);
+    } else {
+      setCart((old) => [...old], {
+        [cart[findItem]]: (cart[findItem].quantity = parseFloat(
+          cartQuantity + currentItem.quantity
+        )),
+      });
+    }
+  };
+
+  useEffect(() => {
+    console.log(cart);
+    if (checkItem === true) {
+      setCartQuantity(cart[findItem].quantity);
+    }
+    setQuantity(1);
+  }, [cart]);
 
   function handleChange(e) {
     const quantityInput = document.getElementById('quantity-input');
@@ -24,12 +44,9 @@ const Item = (props) => {
     setQuantity(value);
     if (value > 99) {
       setQuantity(99);
-      console.log(quantity);
     } else if (value < 1) {
       setQuantity(1);
-      console.log(quantity);
     }
-    console.log(quantity);
   }
 
   const increment = (e) => {
@@ -53,9 +70,9 @@ const Item = (props) => {
         <img className="item-image" src={currentItem.src} alt="one" />
         <div className="item-details">
           <p className="item-title">{currentItem.title}</p>
-          <p className="item-price">{currentItem.price}</p>
+          <p className="item-price">${currentItem.price}</p>
           <p className="item-description">{currentItem.description}</p>
-          <form id="item-form">
+          <form id="item-form" onSubmit={submitQuantity}>
             <label>Quantity:</label>
             <input
               type="number"
