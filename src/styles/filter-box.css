@@ -1,3 +1,11 @@
+#filter-container {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  justify-content: center;
+  top: 35em;
+}
+
 #filter-box {
   display: flex;
   justify-content: center;
@@ -9,12 +17,12 @@ select {
   color: rgb(255, 255, 255) !important;
   text-align: center !important;
   font-family: helvetica;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   height: 3em;
-  width: 10em;
+  width: 8em;
   font-size: 1rem;
-  padding: 0 2em 0 2em;
+  margin: 0 2em 0 2em;
   cursor: pointer;
 }
 

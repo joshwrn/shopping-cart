@@ -8,6 +8,7 @@ const cards = [
     gender: 'woman',
     type: 'bottom',
     color: 'black',
+    brand: 'gucci',
   },
   {
     title: 'Tattered Silk Coat',
@@ -18,6 +19,7 @@ const cards = [
     gender: 'woman',
     type: 'shoes',
     color: 'grey',
+    brand: 'maison margiela',
   },
   {
     title: 'Royal Gold Gown',
@@ -28,6 +30,7 @@ const cards = [
     gender: 'woman',
     type: 'top',
     color: 'blue',
+    brand: 'luisa beccaria',
   },
   {
     title: 'Fine Ripped Shirt',
@@ -38,6 +41,7 @@ const cards = [
     gender: 'woman',
     type: 'top',
     color: 'black',
+    brand: 'maison margiela',
   },
   {
     title: 'Renaissance Dress',
@@ -48,6 +52,7 @@ const cards = [
     gender: 'woman',
     type: 'top',
     color: 'white',
+    brand: 'simone rocha ',
   },
   {
     title: 'Black Buttoned Overcoat',
@@ -58,6 +63,7 @@ const cards = [
     gender: 'woman',
     type: 'top',
     color: 'black',
+    brand: 'yohji yamamoto',
   },
   {
     title: 'Black Layered Top',
@@ -68,6 +74,7 @@ const cards = [
     gender: 'woman',
     type: 'top',
     color: 'black',
+    brand: 'anne sofie madsen',
   },
 ];
 

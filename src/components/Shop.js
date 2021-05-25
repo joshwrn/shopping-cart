@@ -15,13 +15,15 @@ const Shop = ({ cardsArray }) => {
         <h1 id="shop-title">WOMEN'S</h1>
       </div>
       <img id="shop-hero" src="/img/hero2.jpg" alt="hero" />
-      <FilterBox
-        filters={filters}
-        setFilters={setFilters}
-        currentItems={currentItems}
-        setItems={setItems}
-        cards={cards}
-      />
+      <div id="filter-container">
+        <FilterBox
+          filters={filters}
+          setFilters={setFilters}
+          currentItems={currentItems}
+          setItems={setItems}
+          cards={cards}
+        />
+      </div>
       <div id="shop-section">
         {currentItems.map((item) => {
           return (
