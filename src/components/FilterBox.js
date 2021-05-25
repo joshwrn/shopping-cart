@@ -9,10 +9,17 @@ const FilterBox = (props) => {
   //// FIRST ADD FILTER TO ARRAY
   const setColor = (e) => {
     const colorForm = document.getElementById('color-form');
-    setFilters((old) => [...old], {
-      [filters[0]]: (filters[0].color = colorForm.value),
-    });
-    console.log(colorForm.value);
+    const typeForm = document.getElementById('type-form');
+    setFilters(
+      (old) => [...old],
+      {
+        [filters[0]]: (filters[0].color = colorForm.value),
+      },
+      {
+        [filters[0]]: (filters[0].type = typeForm.value),
+      }
+    );
+    console.log(filters);
   };
 
   //// WHEN FILTER UPDATED RUN FILTER FUNCTION
@@ -20,22 +27,24 @@ const FilterBox = (props) => {
     filteredColor();
   }, [filters]);
 
+  let hi = 'hi';
+
   //// FILTER FUNCTION
   const filteredColor = () => {
-    if (filters[0].color !== 'all') {
-      setItems(cards.filter((item) => item.color === filters[0].color));
-    } else {
-      setItems(cards);
-    }
+    setItems(
+      cards.filter(
+        (item) =>
+          (item.type === filters[0].type || filters[0].type === 'all') &&
+          (item.color === filters[0].color || filters[0].color === 'all')
+      )
+    );
   };
-
-  //< SET TYPE
 
   return (
     <div className="custom-select" id="filter-box">
       <form onChange={setColor}>
-        <select id="color-form" defaultValue={'DEFAULT'}>
-          <option value="DEFAULT" disabled>
+        <select id="color-form" defaultValue={'all'}>
+          <option value="all" disabled>
             Color
           </option>
           <option value="all">All Colors</option>
@@ -46,15 +55,15 @@ const FilterBox = (props) => {
         </select>
       </form>
       <form onChange={setColor}>
-        <select defaultValue={'DEFAULT'}>
-          <option value="DEFAULT" disabled>
+        <select id="type-form" defaultValue={'all'}>
+          <option value="all" disabled>
             Type
           </option>
           <option value="all">All Types</option>
-          <option value="Top">Top</option>
-          <option value="Bottom">Bottom</option>
-          <option value="Shoes">Shoes</option>
-          <option value="Accessories">Accessories</option>
+          <option value="top">Top</option>
+          <option value="bottom">Bottom</option>
+          <option value="shoes">Shoes</option>
+          <option value="accessories">Accessories</option>
         </select>
       </form>
     </div>
