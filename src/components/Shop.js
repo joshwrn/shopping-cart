@@ -7,7 +7,9 @@ const Shop = ({ cardsArray }) => {
   const cards = cardsArray;
   return (
     <div id="shop">
-      <div id="shop-gradient"></div>
+      <div id="shop-gradient">
+        <h1 id="shop-title">WOMEN'S</h1>
+      </div>
       <img id="shop-hero" src="/img/hero2.jpg" alt="hero" />
       <div id="shop-section">
         {cards.map((item) => {

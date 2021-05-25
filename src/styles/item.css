@@ -15,11 +15,11 @@
 #item-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3em;
+  gap: 5em;
   background: black;
   height: fit-content;
   width: inherit;
-  padding: 12em 15em 15em 15em;
+  padding: 12em 10em 15em 10em;
 }
 
 #item-inner > .item-image {
@@ -32,6 +32,7 @@
   transition: transform 0.6s;
   filter: brightness(70%);
   z-index: -1;
+  justify-self: right;
 }
 
 #item-inner > .item-details {
@@ -125,4 +126,15 @@ input:focus {
   width: 3em;
   height: 2em;
   margin: 3em 0 3em 0;
+}
+
+/*// MEDIA QUERY */
+
+@media only screen and (max-width: 780px) {
+  #item-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

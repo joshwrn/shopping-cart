@@ -35,7 +35,7 @@ const Nav = (props) => {
 
   //+ CART FUNCTION
   const openCart = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     const cart = document.getElementById('cart-outer');
     const cartInner = document.getElementById('cart');
     const navBg = document.getElementById('nav');
@@ -62,6 +62,12 @@ const Nav = (props) => {
       }
     }
   };
+
+  useEffect(() => {
+    if (cart.length > 0 && cartOpen === false) {
+      openCart();
+    }
+  }, [cart]);
 
   return (
     <div id="nav">

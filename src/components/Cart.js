@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import '../styles/cart.css';
+import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
   const { click, cart, setCart } = props;
@@ -25,31 +26,38 @@ const Cart = (props) => {
             <p id="total">
               Total: ${Number(totalPrice).toLocaleString('en-US')}
             </p>
+          </div>{' '}
+          <div id="cart-scroll">
+            <ul id="cart-list">
+              {cart.map((item) => {
+                return (
+                  <Link to={`/shop/item/${item.key}`} key={item.key}>
+                    <li className="cart-item">
+                      <img
+                        className="cart-item-image"
+                        src={item.src}
+                        alt={item.key}
+                      />
+                      <div className="item-details">
+                        <span className="item-name">{item.title}</span>
+                        <div>
+                          <span className="item-text">
+                            ${Number(item.price).toLocaleString('en-US')}
+                          </span>
+                          <span className="item-text">
+                            Quantity: {item.quantity}
+                          </span>
+                        </div>
+                      </div>
+                    </li>
+                  </Link>
+                );
+              })}
+            </ul>
           </div>
-          <ul id="cart-list">
-            {cart.map((item) => {
-              return (
-                <li key={item.key} className="cart-item">
-                  <img
-                    className="cart-item-image"
-                    src={item.src}
-                    alt={item.key}
-                  />
-                  <div className="item-details">
-                    <span className="item-name">{item.title}</span>
-                    <div>
-                      <span className="item-text">
-                        ${Number(item.price).toLocaleString('en-US')}
-                      </span>
-                      <span className="item-text">
-                        Quantity: {item.quantity}
-                      </span>
-                    </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+          <div id="cart-bottom">
+            <button id="checkout">Checkout</button>
+          </div>
         </div>
       </div>
     </div>

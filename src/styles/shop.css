@@ -1,5 +1,10 @@
 /*! SHOP */
 
+@font-face {
+  font-family: light;
+  src: url(../fonts/Futura-Light-Regular.otf);
+}
+
 #shop,
 #shop-section {
   z-index: -5;
@@ -7,17 +12,31 @@
 }
 
 #shop-gradient {
+  display: flex;
   position: absolute;
   width: 100vw;
-  height: 30em;
+  height: 40em;
   background-image: linear-gradient(transparent, rgb(0, 0, 0));
   z-index: -1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#shop-title {
+  position: absolute;
+  text-align: center;
+  letter-spacing: 0.3em;
+  font-family: light;
+  font-weight: 100;
+  text-indent: 0.3em;
+  font-size: 3rem;
 }
 
 #shop-hero {
   position: relative;
   width: 100vw;
-  height: 30em;
+  height: 40em;
   object-fit: cover;
   display: block;
   z-index: -2;
