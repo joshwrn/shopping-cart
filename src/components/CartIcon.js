@@ -14,8 +14,8 @@ const CartIcon = (props) => {
   const { click, cart, setCart } = props;
   const classes = useStyles();
   return (
-    <div onClick={click}>
-      <div className="cart-icon">
+    <div>
+      <div onClick={click} id="cart-icon">
         <Badge
           badgeContent={cart.length}
           showZero

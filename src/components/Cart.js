@@ -4,7 +4,6 @@ import '../styles/cart.css';
 
 const Cart = (props) => {
   const { click, cart, setCart } = props;
-  const [total, setTotal] = useState(0);
 
   const totalPrice = cart.reduce((add, item) => {
     let next = parseFloat(
@@ -12,11 +11,6 @@ const Cart = (props) => {
     );
     return parseFloat(Number(add) + Number(next)).toFixed(2);
   }, 0);
-
-  useEffect(() => {
-    setTotal(totalPrice);
-    console.log(total);
-  }, [cart]);
 
   return (
     <div>
@@ -28,7 +22,9 @@ const Cart = (props) => {
               style={{ color: 'black' }}
               onClick={click}
             />
-            <p id="total">Total: ${total}</p>
+            <p id="total">
+              Total: ${Number(totalPrice).toLocaleString('en-US')}
+            </p>
           </div>
           <ul id="cart-list">
             {cart.map((item) => {
@@ -42,7 +38,9 @@ const Cart = (props) => {
                   <div className="item-details">
                     <span className="item-name">{item.title}</span>
                     <div>
-                      <span className="item-text">{`$${item.price}`}</span>
+                      <span className="item-text">
+                        ${Number(item.price).toLocaleString('en-US')}
+                      </span>
                       <span className="item-text">
                         Quantity: {item.quantity}
                       </span>

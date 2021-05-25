@@ -30,7 +30,7 @@
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   overflow-y: scroll;
-  transition: height 1s;
+  transition: height 0.6s;
 }
 
 /*+ cart header */
@@ -42,7 +42,7 @@
   margin: 0 1em 0 1em;
   border-bottom: 1px solid black;
   color: black;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
 }
 
 #cart-close {

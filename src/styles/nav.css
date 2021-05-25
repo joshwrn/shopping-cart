@@ -129,7 +129,7 @@ a {
 
 /*@ CART ICON */
 
-.cart-icon {
+#cart-icon {
   display: flex;
   grid-column: 3/-1;
   justify-content: flex-end;
@@ -163,6 +163,27 @@ a {
   margin: 1px 0 0 1px;
 }
 
+/*// ANIMATIONS */
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0em);
+  }
+  25% {
+    transform: translateY(-0.5em);
+  }
+  50% {
+    transform: translateY(0em);
+  }
+  75% {
+    transform: translateY(-0.2em);
+  }
+  100% {
+    transform: translateY(0em);
+  }
+}
+
+/*// MEDIA QUERY */
 @media only screen and (max-width: 600px) {
   #search-icon {
     display: none;

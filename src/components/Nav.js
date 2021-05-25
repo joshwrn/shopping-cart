@@ -9,7 +9,15 @@ const Nav = (props) => {
   const [cartOpen, setCartOpen] = useState(false);
   const { cart, setCart } = props;
 
-  useEffect(() => {}, [cart]);
+  useEffect(() => {
+    if (cart.length > 0) {
+      const cartIcon = document.getElementById('cart-icon');
+      cartIcon.style.setProperty('animation', 'bounce 0.8s');
+      setTimeout(function () {
+        cartIcon.style.setProperty('animation', '');
+      }, 800);
+    }
+  }, [cart]);
 
   //+ SCROLL FUNCTION
 
@@ -43,7 +51,7 @@ const Nav = (props) => {
       cartInner.style.setProperty('height', '0em');
       setTimeout(function () {
         cart.style.setProperty('visibility', 'hidden');
-      }, 1000);
+      }, 600);
       if (
         document.body.scrollTop >= 20 ||
         document.documentElement.scrollTop >= 20

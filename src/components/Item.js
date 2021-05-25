@@ -70,7 +70,9 @@ const Item = (props) => {
         <img className="item-image" src={currentItem.src} alt="one" />
         <div className="item-details">
           <p className="item-title">{currentItem.title}</p>
-          <p className="item-price">${currentItem.price}</p>
+          <p className="item-price">
+            ${Number(currentItem.price).toLocaleString('en-US')}
+          </p>
           <p className="item-description">{currentItem.description}</p>
           <form id="item-form" onSubmit={submitQuantity}>
             <label>Quantity:</label>
