@@ -5,6 +5,9 @@ const cards = [
     price: '1849.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '1',
+    gender: 'woman',
+    type: 'bottom',
+    color: 'black',
   },
   {
     title: 'Tattered Silk Coat',
@@ -12,6 +15,9 @@ const cards = [
     price: '1379.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '2',
+    gender: 'woman',
+    type: 'shoes',
+    color: 'grey',
   },
   {
     title: 'Royal Gold Gown',
@@ -19,6 +25,9 @@ const cards = [
     price: '859.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '3',
+    gender: 'woman',
+    type: 'top',
+    color: 'blue',
   },
   {
     title: 'Fine Ripped Shirt',
@@ -26,6 +35,9 @@ const cards = [
     price: '1319.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '4',
+    gender: 'woman',
+    type: 'top',
+    color: 'black',
   },
   {
     title: 'Renaissance Dress',
@@ -33,6 +45,9 @@ const cards = [
     price: '2899.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '5',
+    gender: 'woman',
+    type: 'top',
+    color: 'white',
   },
   {
     title: 'Black Buttoned Overcoat',
@@ -40,6 +55,9 @@ const cards = [
     price: '659.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '6',
+    gender: 'woman',
+    type: 'top',
+    color: 'black',
   },
   {
     title: 'Black Layered Top',
@@ -47,6 +65,9 @@ const cards = [
     price: '779.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     key: '7',
+    gender: 'woman',
+    type: 'top',
+    color: 'black',
   },
 ];
 

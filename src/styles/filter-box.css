@@ -1,0 +1,23 @@
+#filter-box {
+  display: flex;
+  justify-content: center;
+  margin: 0 12em 0 12em;
+  border-bottom: 1px solid rgba(56, 56, 56, 0.603);
+}
+
+select {
+  color: rgb(255, 255, 255) !important;
+  text-align: center !important;
+  font-family: helvetica;
+  background-color: black;
+  border: none;
+  height: 3em;
+  width: 10em;
+  font-size: 1rem;
+  padding: 0 2em 0 2em;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
