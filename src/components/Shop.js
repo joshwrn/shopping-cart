@@ -6,7 +6,9 @@ import FilterBox from './FilterBox';
 
 const Shop = ({ cardsArray }) => {
   const cards = cardsArray;
-  const [filters, setFilters] = useState([{ color: 'all', type: 'all' }]);
+  const [filters, setFilters] = useState([
+    { color: 'all', type: 'all', brand: 'all' },
+  ]);
   const [currentItems, setItems] = useState(cards);
 
   return (
@@ -27,7 +29,7 @@ const Shop = ({ cardsArray }) => {
       <div id="shop-section">
         {currentItems.map((item) => {
           return (
-            <Link to={`/shop/item/${item.key}`} key={item.key}>
+            <Link to={`/shop/item/${item.title}`} key={item.title}>
               <Card
                 title={item.title}
                 src={item.src}

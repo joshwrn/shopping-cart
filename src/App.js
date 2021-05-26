@@ -27,7 +27,7 @@ function App() {
           </Route>
           <Route
             exact
-            path="/shop/item/:id"
+            path="/shop/item/:title"
             render={(props) => (
               <Item {...props} cards={cards} cart={cart} setCart={setCart} />
             )}

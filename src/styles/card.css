@@ -10,17 +10,16 @@
   z-index: -5;
   transition: transform 0.6s;
   cursor: pointer;
-  border: 1px solid rgba(56, 56, 56, 0.603);
+  border: 0px solid rgba(56, 56, 56, 0);
   overflow: hidden;
-  border-radius: 0.2em;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 12em;
-  height: 20em;
+  width: 22em;
+  height: 26em;
   background: rgb(7, 7, 7);
   cursor: pointer;
   border: none;
@@ -71,7 +70,7 @@
   bottom: 0;
   left: 0;
   margin: 0;
-  width: 13em;
+  width: 22em;
   height: 11em;
   z-index: 1;
   opacity: 0%;

@@ -10,9 +10,13 @@ const Item = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [cartQuantity, setCartQuantity] = useState(0);
   //+ get item
-  const currentItem = cards.find((item) => item.key === match.params.id);
+  const currentItem = cards.find((item) => item.title === match.params.title);
   const checkItem = cart.some((item) => item.key === currentItem.key);
   const findItem = cart.findIndex((item) => item.key === currentItem.key);
+
+  const test = () => {
+    console.log(match);
+  };
 
   const submitQuantity = (e) => {
     e.preventDefault();
@@ -67,7 +71,12 @@ const Item = (props) => {
     <div id="item-page">
       <ScrollToTop />
       <div id="item-inner">
-        <img className="item-image" src={currentItem.src} alt="one" />
+        <img
+          className="item-image"
+          src={currentItem.src}
+          alt="one"
+          onClick={test}
+        />
         <div className="item-details">
           <p className="item-title">{currentItem.title}</p>
           <p className="item-price">

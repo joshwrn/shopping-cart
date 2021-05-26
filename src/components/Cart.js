@@ -16,7 +16,7 @@ const Cart = (props) => {
   return (
     <div>
       <div id="cart-outer">
-        <div id="cart">
+        <div id="cart" onMouseLeave={click}>
           <div id="cart-header">
             <CloseSharpIcon
               id="cart-close"
