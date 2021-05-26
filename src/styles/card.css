@@ -18,7 +18,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 22em;
+  width: 20em;
   height: 26em;
   background: rgb(7, 7, 7);
   cursor: pointer;
@@ -55,7 +55,7 @@
   transform: scale(1.1);
 }
 
-/*+ CARD BOTTOM */
+/*+ CARD INFO PANEL */
 
 .card-bottom:hover > .card-image {
   transform: scale(1.1);
@@ -70,7 +70,7 @@
   bottom: 0;
   left: 0;
   margin: 0;
-  width: 22em;
+  width: 20em;
   height: 11em;
   z-index: 1;
   opacity: 0%;
@@ -89,6 +89,12 @@
 .card-text > .item-title {
   font-size: 1.1rem;
   font-weight: 800;
+  padding-bottom: 0.1em;
+}
+
+.card-text > .item-brand {
+  font-size: 0.9rem;
+  padding-bottom: 0.7em;
 }
 
 .card-text > .item-price {

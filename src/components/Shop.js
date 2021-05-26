@@ -7,7 +7,7 @@ import FilterBox from './FilterBox';
 const Shop = ({ cardsArray }) => {
   const cards = cardsArray;
   const [filters, setFilters] = useState([
-    { color: 'all', type: 'all', brand: 'all' },
+    { sort: 'default', color: 'all', type: 'all', brand: 'all' },
   ]);
   const [currentItems, setItems] = useState(cards);
 
@@ -35,6 +35,7 @@ const Shop = ({ cardsArray }) => {
                 src={item.src}
                 price={`$${Number(item.price).toLocaleString('en-US')}`}
                 description={item.description}
+                brand={item.brand}
               />
             </Link>
           );

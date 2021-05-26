@@ -45,13 +45,13 @@
 
 #shop-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 22em);
+  grid-template-columns: repeat(auto-fill, 20em);
   justify-content: center;
   gap: 0.3em;
   background: rgb(0, 0, 0);
   height: fit-content;
   width: 100vw;
-  padding: 5em 0em 5em 0em;
+  padding: 3.5em 1em 5em 1em;
   opacity: 0%;
   animation: fade-in 2s forwards;
 }

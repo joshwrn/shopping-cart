@@ -20,7 +20,8 @@ select {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   height: 3em;
-  width: 8em;
+
+  width: 9em;
   font-size: 1rem;
   margin: 0 2em 0 2em;
   cursor: pointer;
@@ -29,3 +30,9 @@ select {
 select:focus {
   outline: none;
 }
+
+/* #color-form,
+#type-form,
+#sort-form {
+  width: 8em;
+} */

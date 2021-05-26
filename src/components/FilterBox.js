@@ -4,13 +4,28 @@ import '../styles/filter-box.css';
 const FilterBox = (props) => {
   const { cards, filters, setFilters, currentItems, setItems } = props;
 
-  //< SET COLOR
+  //< SORT ITEMS
+
+  //// SORT CARDS
+
+  const updateSort = (e) => {
+    if (filters[0].sort === 'default') {
+      cards.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
+    } else if (filters[0].sort === 'price-asc') {
+      cards.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    } else if (filters[0].sort === 'price-desc') {
+      cards.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    }
+  };
+
+  //< SET FILTERS
 
   //// FIRST ADD FILTER TO ARRAY
-  const setColor = (e) => {
+  const handleChange = (e) => {
     const colorForm = document.getElementById('color-form');
     const typeForm = document.getElementById('type-form');
     const brandForm = document.getElementById('brand-form');
+    const sortForm = document.getElementById('sort-form');
     setFilters(
       (old) => [...old],
       {
@@ -21,18 +36,22 @@ const FilterBox = (props) => {
       },
       {
         [filters[0]]: (filters[0].brand = brandForm.value),
-      }
+      },
+      {
+        [filters[0]]: (filters[0].sort = sortForm.value),
+      },
+      updateSort()
     );
-    console.log(filters);
   };
 
   //// WHEN FILTER UPDATED RUN FILTER FUNCTION
   useEffect(() => {
-    filteredColor();
+    const sortForm = document.getElementById('sort-form');
+    updateFilters();
   }, [filters]);
 
   //// FILTER FUNCTION
-  const filteredColor = () => {
+  const updateFilters = () => {
     setItems(
       cards.filter(
         (item) =>
@@ -45,7 +64,17 @@ const FilterBox = (props) => {
 
   return (
     <div className="custom-select" id="filter-box">
-      <form onChange={setColor}>
+      <form onChange={handleChange}>
+        <select id="sort-form" defaultValue={'none'}>
+          <option disabled value="none">
+            Sort
+          </option>
+          <option value="default">Default</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </form>
+      <form onChange={handleChange}>
         <select id="color-form" defaultValue={'all'}>
           <option value="all">All Colors</option>
           <option value="black">Black</option>
@@ -55,31 +84,31 @@ const FilterBox = (props) => {
           <option value="blue">Blue</option>
         </select>
       </form>
-      <form onChange={setColor}>
+      <form onChange={handleChange}>
+        <select id="brand-form" defaultValue={'all'}>
+          <option value="all">All Brands</option>
+          <option value="Anne Sofie Madsen">Anne Sofie Madsen</option>
+          <option value="Comme De Garcons">Comme De Garcons</option>
+          <option value="Dolce & Gabbana">Dolce & Gabbana</option>
+          <option value="Gucci">Gucci</option>
+          <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
+          <option value="Luisa Beccaria">Luisa Beccaria</option>
+          <option value="Maison Margiela">Maison Margiela</option>
+          <option value="Manish Arora">Manish Arora</option>
+          <option value="Moschino">Moschino</option>
+          <option value="Simone Rocha">Simone Rocha</option>
+          <option value="Valentino">Valentino</option>
+          <option value="Versace">Versace</option>
+          <option value="Yohji Yamamoto">Yohji Yamamoto</option>
+        </select>
+      </form>
+      <form onChange={handleChange}>
         <select id="type-form" defaultValue={'all'}>
           <option value="all">All Types</option>
           <option value="top">Top</option>
           <option value="bottom">Bottom</option>
           <option value="shoes">Shoes</option>
           <option value="accessories">Accessories</option>
-        </select>
-      </form>
-      <form onChange={setColor}>
-        <select id="brand-form" defaultValue={'all'}>
-          <option value="all">All Brands</option>
-          <option value="anne sofie madsen">Anne Sofie Madsen</option>
-          <option value="comme de garcons">Comme De Garcons</option>
-          <option value="dolce">Dolce & Gabbana</option>
-          <option value="gucci">Gucci</option>
-          <option value="jean paul gaultier">Jean Paul Gaultier</option>
-          <option value="luisa beccaria">Luisa Beccaria</option>
-          <option value="maison margiela">Maison Margiela</option>
-          <option value="manish arora">Manish Arora</option>
-          <option value="moschino">Moschino</option>
-          <option value="simone rocha">Simone Rocha</option>
-          <option value="valentino">Valentino</option>
-          <option value="versace">Versace</option>
-          <option value="yohji yamamoto">Yohji Yamamoto</option>
         </select>
       </form>
     </div>

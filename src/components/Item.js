@@ -11,8 +11,8 @@ const Item = (props) => {
   const [cartQuantity, setCartQuantity] = useState(0);
   //+ get item
   const currentItem = cards.find((item) => item.title === match.params.title);
-  const checkItem = cart.some((item) => item.key === currentItem.key);
-  const findItem = cart.findIndex((item) => item.key === currentItem.key);
+  const checkItem = cart.some((item) => item.title === currentItem.title);
+  const findItem = cart.findIndex((item) => item.title === currentItem.title);
 
   const test = () => {
     console.log(match);

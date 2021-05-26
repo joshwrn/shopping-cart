@@ -31,7 +31,7 @@ const Cart = (props) => {
             <ul id="cart-list">
               {cart.map((item) => {
                 return (
-                  <Link to={`/shop/item/${item.key}`} key={item.key}>
+                  <Link to={`/shop/item/${item.title}`} key={item.title}>
                     <li className="cart-item">
                       <img
                         className="cart-item-image"
