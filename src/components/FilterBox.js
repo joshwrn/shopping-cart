@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/filter-box.css';
 
 const FilterBox = (props) => {
@@ -21,25 +21,25 @@ const FilterBox = (props) => {
   //< SET FILTERS
 
   //// FIRST ADD FILTER TO ARRAY
-  const handleChange = () => {
+  const handleChange = (e) => {
+    e.preventDefault();
     const colorForm = document.getElementById('color-form');
     const typeForm = document.getElementById('type-form');
     const brandForm = document.getElementById('brand-form');
     const sortForm = document.getElementById('sort-form');
-    setFilters(
-      {
-        ...filters,
-        color: colorForm.value,
-        type: typeForm.value,
-        brand: brandForm.value,
-        sort: sortForm.value,
-      },
-      updateSort()
-    );
+    e.preventDefault();
+    setFilters((filters) => ({
+      ...filters,
+      sort: sortForm.value,
+      type: typeForm.value,
+      brand: brandForm.value,
+      color: colorForm.value,
+    }));
   };
 
-  //// WHEN FILTER UPDATED RUN FILTER FUNCTION
   useEffect(() => {
+    console.log(filters);
+    updateSort();
     updateFilters();
   }, [filters]);
 
