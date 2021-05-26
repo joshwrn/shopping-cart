@@ -8,7 +8,7 @@ const FilterBox = (props) => {
 
   //// SORT CARDS
 
-  const updateSort = (e) => {
+  const updateSort = () => {
     if (filters.sort === 'default') {
       cards.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
     } else if (filters.sort === 'price-asc') {
@@ -21,19 +21,21 @@ const FilterBox = (props) => {
   //< SET FILTERS
 
   //// FIRST ADD FILTER TO ARRAY
-  const handleChange = (e) => {
-    e.preventDefault();
+  const handleChange = () => {
     const colorForm = document.getElementById('color-form');
     const typeForm = document.getElementById('type-form');
     const brandForm = document.getElementById('brand-form');
     const sortForm = document.getElementById('sort-form');
-    setFilters((filters) => ({
-      ...filters,
-      color: colorForm.value,
-      type: typeForm.value,
-      brand: brandForm.value,
-      sort: sortForm.value,
-    }));
+    setFilters(
+      {
+        ...filters,
+        color: colorForm.value,
+        type: typeForm.value,
+        brand: brandForm.value,
+        sort: sortForm.value,
+      },
+      updateSort()
+    );
   };
 
   //// WHEN FILTER UPDATED RUN FILTER FUNCTION
