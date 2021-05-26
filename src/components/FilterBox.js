@@ -9,11 +9,11 @@ const FilterBox = (props) => {
   //// SORT CARDS
 
   const updateSort = (e) => {
-    if (filters[0].sort === 'default') {
+    if (filters.sort === 'default') {
       cards.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
-    } else if (filters[0].sort === 'price-asc') {
+    } else if (filters.sort === 'price-asc') {
       cards.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
-    } else if (filters[0].sort === 'price-desc') {
+    } else if (filters.sort === 'price-desc') {
       cards.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
     }
   };
@@ -22,31 +22,22 @@ const FilterBox = (props) => {
 
   //// FIRST ADD FILTER TO ARRAY
   const handleChange = (e) => {
+    e.preventDefault();
     const colorForm = document.getElementById('color-form');
     const typeForm = document.getElementById('type-form');
     const brandForm = document.getElementById('brand-form');
     const sortForm = document.getElementById('sort-form');
-    setFilters(
-      (old) => [...old],
-      {
-        [filters[0]]: (filters[0].color = colorForm.value),
-      },
-      {
-        [filters[0]]: (filters[0].type = typeForm.value),
-      },
-      {
-        [filters[0]]: (filters[0].brand = brandForm.value),
-      },
-      {
-        [filters[0]]: (filters[0].sort = sortForm.value),
-      },
-      updateSort()
-    );
+    setFilters((filters) => ({
+      ...filters,
+      color: colorForm.value,
+      type: typeForm.value,
+      brand: brandForm.value,
+      sort: sortForm.value,
+    }));
   };
 
   //// WHEN FILTER UPDATED RUN FILTER FUNCTION
   useEffect(() => {
-    const sortForm = document.getElementById('sort-form');
     updateFilters();
   }, [filters]);
 
@@ -55,9 +46,9 @@ const FilterBox = (props) => {
     setItems(
       cards.filter(
         (item) =>
-          (item.type === filters[0].type || filters[0].type === 'all') &&
-          (item.color === filters[0].color || filters[0].color === 'all') &&
-          (item.brand === filters[0].brand || filters[0].brand === 'all')
+          (item.type === filters.type || filters.type === 'all') &&
+          (item.color === filters.color || filters.color === 'all') &&
+          (item.brand === filters.brand || filters.brand === 'all')
       )
     );
   };

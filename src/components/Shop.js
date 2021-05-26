@@ -6,9 +6,12 @@ import FilterBox from './FilterBox';
 
 const Shop = ({ cardsArray }) => {
   const cards = cardsArray;
-  const [filters, setFilters] = useState([
-    { sort: 'default', color: 'all', type: 'all', brand: 'all' },
-  ]);
+  const [filters, setFilters] = useState({
+    sort: 'default',
+    color: 'all',
+    type: 'all',
+    brand: 'all',
+  });
   const [currentItems, setItems] = useState(cards);
 
   return (
