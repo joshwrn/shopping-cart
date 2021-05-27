@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/checkout.css';
+import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 
 const Checkout = ({ cart, setCart }) => {
   const [final, setFinal] = useState(0);
@@ -20,12 +21,36 @@ const Checkout = ({ cart, setCart }) => {
   const findTotal = () => {
     if (cart.length > 0) {
       setFinal(parseFloat((Number(subTotal) + Number(tax) + 15).toFixed(2)));
+    } else {
+      setFinal(0);
     }
   };
 
   useEffect(() => {
     findTotal();
   }, [cart]);
+
+  const handleQuantity = (e) => {
+    e.preventDefault();
+    const itemKey = e.target.getAttribute('data-key');
+
+    const findItem = cart.findIndex((item) => item.key === itemKey);
+
+    setCart((old) => [...old], {
+      [cart[findItem]]: (cart[findItem].quantity = e.target.value),
+    });
+  };
+
+  //+ HANDLE DELETE
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    const itemKey = e.target.getAttribute('data-key');
+
+    const findItem = cart.findIndex((item) => item.key === itemKey);
+
+    setCart((old) => [...old], cart.splice(findItem, 1));
+  };
 
   return (
     <div id="checkout">
@@ -34,33 +59,59 @@ const Checkout = ({ cart, setCart }) => {
       </div>
       <img id="check-hero" src="/img/hero.jpg" alt="hero" />
       <div id="checkout-section">
-        <ul id="check-list">
-          {cart.map((item) => {
-            return (
-              <li className="check-item">
-                <Link to={`/shop/item/${item.title}`} key={item.title}>
-                  <img
-                    className="check-item-image"
-                    src={item.src}
-                    alt={item.key}
-                  />
-                </Link>
-                <div className="check-details">
-                  <div className="details-right">
-                    <Link to={`/shop/item/${item.title}`} key={item.title}>
-                      <span className="check-name">{item.title}</span>
+        <div id="list-container">
+          <ul id="check-list">
+            {cart.map((item) => {
+              return (
+                <li className="check-item" key={item.title}>
+                  <Link to={`/shop/item/${item.title}`}>
+                    <img
+                      className="check-item-image"
+                      src={item.src}
+                      alt={item.key}
+                    />
+                  </Link>
+                  <div className="check-details">
+                    <div className="details-right">
+                      <Link to={`/shop/item/${item.title}`} key={item.title}>
+                        <span className="check-name">{item.title}</span>
 
-                      <span className="check-price">
-                        ${Number(item.price).toLocaleString('en-US')}
-                      </span>
-                    </Link>
+                        <span className="check-price">
+                          ${Number(item.price).toLocaleString('en-US')}
+                        </span>
+                      </Link>
+                      {/*//> SET QUANTITY */}
+                    </div>
+                    <div className="check-quantity">
+                      Quantity:
+                      <form onChange={handleQuantity}>
+                        <select
+                          data-key={item.key}
+                          className="quantity-form"
+                          defaultValue={item.quantity}
+                        >
+                          <option disabled value={item.quantity}>
+                            {item.quantity}
+                          </option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </form>
+                      <CloseSharpIcon
+                        onClick={handleDelete}
+                        data-key={item.key}
+                        className="delete-item"
+                      />
+                    </div>
                   </div>
-                  <p className="check-quantity">Quantity: {item.quantity}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         {/*//@ SIDEBAR*/}
         <div id="checkout-sidebar">
           <div id="check-sb-header">

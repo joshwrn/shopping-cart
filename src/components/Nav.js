@@ -64,7 +64,11 @@ const Nav = (props) => {
   };
 
   useEffect(() => {
-    if (cart.length > 0 && cartOpen === false) {
+    if (
+      cart.length > 0 &&
+      cartOpen === false &&
+      window.location.pathname !== '/checkout'
+    ) {
       openCart();
     }
   }, [cart]);

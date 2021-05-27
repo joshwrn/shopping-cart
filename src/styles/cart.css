@@ -53,6 +53,12 @@
   font-family: Helvetica;
 }
 
+#cart-sub-total {
+  font-size: 0.7em;
+  margin-right: 1em;
+  color: rgb(39, 39, 39);
+}
+
 /*+ CART LIST */
 
 #cart-scroll {

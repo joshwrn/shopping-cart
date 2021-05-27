@@ -24,7 +24,7 @@ const Cart = (props) => {
               onClick={click}
             />
             <p id="total">
-              Total: $
+              <span id="cart-sub-total"> Subtotal: </span> $
               {Number(totalPrice).toLocaleString('en-US', {
                 useGrouping: true,
                 minimumFractionDigits: 2,
