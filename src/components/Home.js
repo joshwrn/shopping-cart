@@ -8,7 +8,7 @@ const Home = () => {
       <video muted autoPlay loop id="hero-video">
         <source src="/Videos/z.mp4" type="video/mp4" />
       </video>
-      <NavLink className="hero-button-link" to="/shop">
+      <NavLink className="hero-button-link" to="/women">
         <button className="hero-button">SS21 Collection</button>
         <button className="hero-button">FW2O Collection</button>
       </NavLink>

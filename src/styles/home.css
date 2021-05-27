@@ -22,6 +22,8 @@
   min-width: 100%;
   min-height: 100%;
   z-index: -3;
+  opacity: 0;
+  animation: fade-in 1.3s forwards;
 }
 
 .hero-button {

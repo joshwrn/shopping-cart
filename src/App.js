@@ -7,6 +7,7 @@ import Shop from './components/Shop';
 import About from './components/About';
 import Item from './components/Item';
 import cards from './components/functions/cards';
+import Checkout from './components/Checkout';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -19,11 +20,14 @@ function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route exact path="/shop">
+          <Route exact path="/women">
             <Shop cardsArray={cards} />
           </Route>
           <Route exact path="/about">
             <About />
+          </Route>
+          <Route exact path="/checkout">
+            <Checkout cart={cart} setCart={setCart} />
           </Route>
           <Route
             exact

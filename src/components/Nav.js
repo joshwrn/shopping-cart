@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CartIcon from './CartIcon';
-import LanguageIcon from '@material-ui/icons/Twitter';
+import LanguageIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink } from 'react-router-dom';
 import '../styles/nav.css';
@@ -75,7 +75,7 @@ const Nav = (props) => {
         <div id="nav-location">
           <LanguageIcon className="nav-lang" style={{ fontSize: '0.8rem' }} />
           <a
-            href="https://twitter.com/joshwrn"
+            href="https://github.com/joshwrn"
             target="_blank"
             className="nav-text"
             rel="noreferrer"
@@ -93,8 +93,11 @@ const Nav = (props) => {
           <NavLink exact to="/">
             <li className="nav-page">Home</li>
           </NavLink>
-          <NavLink to="/shop">
-            <li className="nav-page">Shop</li>
+          <NavLink to="/women">
+            <li className="nav-page">Women</li>
+          </NavLink>
+          <NavLink to="/men">
+            <li className="nav-page">Men</li>
           </NavLink>
           <NavLink to="/about">
             <li className="nav-page">About</li>

@@ -14,14 +14,9 @@ const Item = (props) => {
   const checkItem = cart.some((item) => item.title === currentItem.title);
   const findItem = cart.findIndex((item) => item.title === currentItem.title);
 
-  const test = () => {
-    console.log(match);
-  };
-
   const submitQuantity = (e) => {
     e.preventDefault();
     currentItem.quantity = quantity;
-
     if (checkItem === false) {
       setCart([...cart, currentItem]);
     } else {
@@ -71,12 +66,8 @@ const Item = (props) => {
     <div id="item-page">
       <ScrollToTop />
       <div id="item-inner">
-        <img
-          className="item-image"
-          src={currentItem.src}
-          alt="one"
-          onClick={test}
-        />
+        <div id="item-gradient"></div>
+        <img className="item-image" src={currentItem.src} alt="one" />
         <div className="item-details">
           <p className="item-title">{currentItem.title}</p>
           <p className="item-price">
@@ -97,7 +88,7 @@ const Item = (props) => {
               <ArrowDropDownIcon onClick={decrement} className="arrow-down" />
             </div>
             <button className="submit-button" type="submit">
-              <AddIcon />
+              ADD TO CART
             </button>
           </form>
         </div>

@@ -24,7 +24,11 @@ const Cart = (props) => {
               onClick={click}
             />
             <p id="total">
-              Total: ${Number(totalPrice).toLocaleString('en-US')}
+              Total: $
+              {Number(totalPrice).toLocaleString('en-US', {
+                useGrouping: true,
+                minimumFractionDigits: 2,
+              })}
             </p>
           </div>{' '}
           <div id="cart-scroll">
@@ -56,7 +60,11 @@ const Cart = (props) => {
             </ul>
           </div>
           <div id="cart-bottom">
-            <button id="checkout">Checkout</button>
+            <Link id="checkout-link" to="/checkout">
+              <button onClick={click} id="checkout-button">
+                Checkout
+              </button>
+            </Link>
           </div>
         </div>
       </div>

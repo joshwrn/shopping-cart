@@ -41,6 +41,8 @@
   display: block;
   z-index: -2;
   object-position: top;
+  opacity: 0;
+  animation: fade-in 0.5s forwards;
 }
 
 #shop-section {
@@ -53,14 +55,4 @@
   width: 100vw;
   padding: 3.5em 1em 5em 1em;
   opacity: 0%;
-  animation: fade-in 2s forwards;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
 }

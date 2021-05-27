@@ -20,6 +20,15 @@ const FilterBox = (props) => {
 
   //< SET FILTERS
 
+  const fade = () => {
+    const shop = document.getElementById('shop-section');
+    shop.style.setProperty('opacity', '0');
+    shop.style.setProperty('animation', '');
+    setTimeout(function () {
+      shop.style.setProperty('animation', 'fade-in 1.3s forwards');
+    }, 0);
+  };
+
   //// FIRST ADD FILTER TO ARRAY
   const handleChange = (e) => {
     e.preventDefault();
@@ -27,6 +36,7 @@ const FilterBox = (props) => {
     const typeForm = document.getElementById('type-form');
     const brandForm = document.getElementById('brand-form');
     const sortForm = document.getElementById('sort-form');
+
     e.preventDefault();
     setFilters((filters) => ({
       ...filters,
@@ -37,10 +47,12 @@ const FilterBox = (props) => {
     }));
   };
 
+  //// WHEN FILTERS ARE UPDATED SET THE FILTERS
+
   useEffect(() => {
-    console.log(filters);
     updateSort();
     updateFilters();
+    fade();
   }, [filters]);
 
   //// FILTER FUNCTION
