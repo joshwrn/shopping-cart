@@ -74,7 +74,7 @@ const Checkout = ({ cart, setCart }) => {
                     />
                   </Link>
                   <div className="check-details">
-                    <div className="details-right">
+                    <div className="details-left">
                       <Link to={`/shop/item/${item.title}`} key={item.title}>
                         <span className="check-name">{item.title}</span>
 
@@ -82,6 +82,7 @@ const Checkout = ({ cart, setCart }) => {
                           ${Number(item.price).toLocaleString('en-US')}
                         </span>
                       </Link>
+                      <p className="check-size">Size: {item.size}</p>
                       {/*//> SET QUANTITY */}
                     </div>
                     <div className="check-quantity">

@@ -78,6 +78,8 @@
   width: 100%;
 }
 
+/*> Details */
+
 .check-details {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -85,6 +87,12 @@
   text-align: start;
   padding: 3em 1em 3em 3em;
   width: 100%;
+  height: 100%;
+}
+
+.details-left {
+  display: flex;
+  flex-direction: column;
 }
 
 .check-name {
@@ -94,6 +102,12 @@
 
 .check-price {
   font-size: 0.8rem;
+}
+
+.check-size {
+  margin-top: 15%;
+  font-size: 0.8em;
+  color: rgb(207, 207, 207);
 }
 
 .check-quantity {
