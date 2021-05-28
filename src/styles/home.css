@@ -40,7 +40,7 @@
   text-align: center;
   font-size: 1.2rem;
   font-family: futura;
-  margin: 1em;
+
   width: 12em;
   position: relative;
   z-index: -1;
@@ -60,6 +60,7 @@
   justify-items: center;
   text-align: center;
   z-index: -2;
+  margin: 1em;
 }
 
 @media only screen and (max-width: 600px) {

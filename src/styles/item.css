@@ -62,9 +62,9 @@
   font-family: Helvetica;
 }
 
-/*> QUANTITY */
+/*> SIZE */
 
-#item-form {
+#size-form {
   display: flex;
   align-items: center;
 
@@ -132,7 +132,7 @@ input:focus {
 
 /*@ SUBMIT */
 
-#item-form > .submit-button {
+#size-form > .submit-button {
   display: flex;
   transition: 0.25s;
   border: 1px solid rgba(0, 0, 0, 0);

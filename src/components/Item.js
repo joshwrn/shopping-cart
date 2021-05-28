@@ -1,65 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/item.css';
-import AddIcon from '@material-ui/icons/Add';
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ScrollToTop from './functions/ScrollToTop';
+import uniqid from 'uniqid';
 
 const Item = (props) => {
   const { match, cards, cart, setCart } = props;
-  const [quantity, setQuantity] = useState(1);
-  const [cartQuantity, setCartQuantity] = useState(0);
+  const [size, setSize] = useState('');
   //+ get item
-  const currentItem = cards.find((item) => item.title === match.params.title);
-  const checkItem = cart.some((item) => item.title === currentItem.title);
-  const findItem = cart.findIndex((item) => item.title === currentItem.title);
+  const findCard = cards.find((item) => item.title === match.params.title);
+  const itemClone = Object.assign({}, findCard);
+  const checkItem = cart.some((item) => item.title === itemClone.title);
+  const findItem = cart.findIndex(
+    (item) => item.title === itemClone.title && item.size === size
+  );
+  const findSize = cart.some(
+    (item) => item.title === itemClone.title && item.size === size
+  );
 
   const submitQuantity = (e) => {
     e.preventDefault();
-    currentItem.quantity = quantity;
-    if (checkItem === false) {
-      setCart([...cart, currentItem]);
-    } else {
-      setCart((old) => [...old], {
-        [cart[findItem]]: (cart[findItem].quantity = parseFloat(
-          cartQuantity + currentItem.quantity
-        )),
-      });
+
+    if (size !== '') {
+      console.log(size);
+      itemClone.quantity = 1;
+      if (checkItem !== true) {
+        itemClone.size = size;
+        itemClone.key = uniqid();
+        setCart([...cart, itemClone]); //push
+      } else if (findSize !== true) {
+        itemClone.size = size;
+        itemClone.key = uniqid();
+        setCart([...cart, itemClone]);
+      } else if (cart[findItem].quantity < 5) {
+        setCart((old) => [...old], {
+          [cart[findItem]]: (cart[findItem].quantity = parseFloat(
+            cart[findItem].quantity + 1
+          )),
+        });
+      }
     }
   };
 
   useEffect(() => {
-    console.log(cart);
-    if (checkItem === true) {
-      setCartQuantity(cart[findItem].quantity);
-    }
-    setQuantity(1);
+    document.getElementById('size-form').reset();
+    setSize('');
   }, [cart]);
 
-  function handleChange(e) {
-    const quantityInput = document.getElementById('quantity-input');
+  const handleChange = () => {
+    const quantityInput = document.getElementById('size-form-select');
+
     const { value } = quantityInput;
-    e.preventDefault();
-    setQuantity(value);
-    if (value > 99) {
-      setQuantity(99);
-    } else if (value < 1) {
-      setQuantity(1);
-    }
-  }
-
-  const increment = (e) => {
-    e.preventDefault();
-    if (quantity < 99) {
-      setQuantity((prev) => prev + 1);
-    }
-  };
-
-  const decrement = (e) => {
-    e.preventDefault();
-    if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
-    }
+    setSize(value);
   };
 
   return (
@@ -67,26 +58,26 @@ const Item = (props) => {
       <ScrollToTop />
       <div id="item-inner">
         <div id="item-gradient"></div>
-        <img className="item-image" src={currentItem.src} alt="one" />
+        <img className="item-image" src={itemClone.src} alt="one" />
         <div className="item-details">
-          <p className="item-title">{currentItem.title}</p>
+          <p className="item-title">{itemClone.title}</p>
           <p className="item-price">
-            ${Number(currentItem.price).toLocaleString('en-US')}
+            ${Number(itemClone.price).toLocaleString('en-US')}
           </p>
-          <p className="item-description">{currentItem.description}</p>
-          <form id="item-form" onSubmit={submitQuantity}>
-            <label>Quantity:</label>
-            <input
-              type="number"
-              name="quantity-name"
-              onChange={handleChange}
-              value={quantity}
-              id="quantity-input"
-            />
-            <div className="arrows">
-              <ArrowDropUpIcon onClick={increment} className="arrow-up" />
-              <ArrowDropDownIcon onClick={decrement} className="arrow-down" />
-            </div>
+          <p className="item-description">{itemClone.description}</p>
+          <form
+            id="size-form"
+            onChange={handleChange}
+            onSubmit={submitQuantity}
+          >
+            <select id="size-form-select" defaultValue={'none'}>
+              <option disabled value="none">
+                Size
+              </option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+            </select>
             <button className="submit-button" type="submit">
               ADD TO CART
             </button>

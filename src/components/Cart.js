@@ -35,7 +35,7 @@ const Cart = (props) => {
             <ul id="cart-list">
               {cart.map((item) => {
                 return (
-                  <Link to={`/shop/item/${item.title}`} key={item.title}>
+                  <Link to={`/shop/item/${item.title}`} key={item.key}>
                     <li className="cart-item">
                       <img
                         className="cart-item-image"
@@ -52,6 +52,7 @@ const Cart = (props) => {
                             Quantity: {item.quantity}
                           </span>
                         </div>
+                        <p>{item.size}</p>
                       </div>
                     </li>
                   </Link>

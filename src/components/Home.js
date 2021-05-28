@@ -10,6 +10,8 @@ const Home = () => {
       </video>
       <NavLink className="hero-button-link" to="/women">
         <button className="hero-button">SS21 Collection</button>
+      </NavLink>
+      <NavLink className="hero-button-link" to="/women">
         <button className="hero-button">FW2O Collection</button>
       </NavLink>
     </div>

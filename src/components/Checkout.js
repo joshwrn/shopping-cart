@@ -30,6 +30,8 @@ const Checkout = ({ cart, setCart }) => {
     findTotal();
   }, [cart]);
 
+  //+ UPDATE QUANTITY
+
   const handleQuantity = (e) => {
     e.preventDefault();
     const itemKey = e.target.getAttribute('data-key');
@@ -63,7 +65,7 @@ const Checkout = ({ cart, setCart }) => {
           <ul id="check-list">
             {cart.map((item) => {
               return (
-                <li className="check-item" key={item.title}>
+                <li className="check-item" key={item.key}>
                   <Link to={`/shop/item/${item.title}`}>
                     <img
                       className="check-item-image"
