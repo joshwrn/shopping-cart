@@ -26,15 +26,9 @@ const Item = (props) => {
     errorMessage.style.setProperty('animation', '');
     errorMessage.style.setProperty('opacity', '0');
     if (size !== '') {
-      console.log(size);
       itemClone.quantity = 1;
-      //+ IF ITEM DOES NOT EXIST
-      if (checkItem !== true) {
-        itemClone.size = size;
-        itemClone.key = uniqid();
-        setCart([itemClone, ...cart]); //push
-        //+ IF ITEM EXISTS BUT SIZE DOES NOT
-      } else if (findSize !== true) {
+      //+ IF ITEM DOES NOT EXIST OR IF ITEM EXISTS BUT SIZE DOES NOT
+      if (checkItem !== true || findSize !== true) {
         itemClone.size = size;
         itemClone.key = uniqid();
         setCart([itemClone, ...cart]);
@@ -76,6 +70,7 @@ const Item = (props) => {
         <div id="item-gradient"></div>
         <img id="item-page-image" src={itemClone.src} alt="one" />
         <div id="item-page-details">
+          <p id="item-brand">{itemClone.brand}</p>
           <p id="item-page-title">
             {itemClone.title} <BackIcon id="back-icon" onClick={goBack} />
           </p>

@@ -1,0 +1,34 @@
+#success {
+  display: flex;
+  flex-direction: column;
+  border: 0.1em solid white;
+  border-radius: 0.25em;
+  text-align: center;
+  height: 15em;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fade-in 0.5s forwards 0.5s;
+}
+
+#success-header {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}
+
+#success-check {
+  margin-right: 0.5em;
+
+  align-self: center;
+  justify-self: center;
+}
+
+#success-title {
+  font-size: 2rem;
+}
+
+#order-id {
+  font-size: 0.7rem;
+}

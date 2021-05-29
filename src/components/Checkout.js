@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/checkout.css';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
+import OrderSuccess from './OrderSuccess';
 
 const Checkout = ({ cart, setCart }) => {
   const [final, setFinal] = useState(0);
+  const [orderStatus, setOrderStatus] = useState(false);
 
   //+ SUB TOTAL
   const subTotal = cart.reduce((add, item) => {
@@ -35,9 +37,7 @@ const Checkout = ({ cart, setCart }) => {
   const handleQuantity = (e) => {
     e.preventDefault();
     const itemKey = e.target.getAttribute('data-key');
-
     const findItem = cart.findIndex((item) => item.key === itemKey);
-
     setCart((old) => [...old], {
       [cart[findItem]]: (cart[findItem].quantity = e.target.value),
     });
@@ -48,10 +48,18 @@ const Checkout = ({ cart, setCart }) => {
   const handleDelete = (e) => {
     e.preventDefault();
     const itemKey = e.target.getAttribute('data-key');
-
     const findItem = cart.findIndex((item) => item.key === itemKey);
-
     setCart((old) => [...old], cart.splice(findItem, 1));
+  };
+
+  //+ HANDLE ORDER
+
+  const submitOrder = (e) => {
+    e.preventDefault();
+    if (cart.length > 0) {
+      setOrderStatus(true);
+      setCart([]);
+    }
   };
 
   return (
@@ -62,58 +70,65 @@ const Checkout = ({ cart, setCart }) => {
       <img id="check-hero" src="/img/hero.jpg" alt="hero" />
       <div id="checkout-section">
         <div id="list-container">
-          <ul id="check-list">
-            {cart.map((item) => {
-              return (
-                <li className="check-item" key={item.key}>
-                  <Link to={`/shop/item/${item.title}`}>
-                    <img
-                      className="check-item-image"
-                      src={item.src}
-                      alt={item.key}
-                    />
-                  </Link>
-                  <div className="check-details">
-                    <div className="details-left">
-                      <Link to={`/shop/item/${item.title}`} key={item.title}>
-                        <span className="check-name">{item.title}</span>
-
-                        <span className="check-price">
-                          ${Number(item.price).toLocaleString('en-US')}
-                        </span>
-                      </Link>
-                      <p className="check-size">Size: {item.size}</p>
-                      {/*//> SET QUANTITY */}
-                    </div>
-                    <div className="check-quantity">
-                      Quantity:
-                      <form onChange={handleQuantity}>
-                        <select
-                          data-key={item.key}
-                          className="quantity-form"
-                          defaultValue={item.quantity}
-                        >
-                          <option disabled value={item.quantity}>
-                            {item.quantity}
-                          </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
-                      </form>
-                      <CloseSharpIcon
-                        onClick={handleDelete}
-                        data-key={item.key}
-                        className="delete-item"
+          {orderStatus ? (
+            <OrderSuccess />
+          ) : (
+            <ul id="check-list">
+              {cart.map((item) => {
+                return (
+                  <li className="check-item" key={item.key}>
+                    <Link to={`/shop/item/${item.title}`}>
+                      <img
+                        className="check-item-image"
+                        src={item.src}
+                        alt={item.key}
                       />
+                    </Link>
+                    <div className="check-details">
+                      <div className="details-left">
+                        <Link to={`/shop/item/${item.title}`} key={item.title}>
+                          <span className="check-brand">{item.brand}</span>
+                          <span className="check-name">{item.title}</span>
+
+                          <span className="check-price">
+                            ${Number(item.price).toLocaleString('en-US')}
+                          </span>
+                        </Link>
+
+                        <p className="check-size">Size: {item.size}</p>
+
+                        {/*//> SET QUANTITY */}
+                      </div>
+                      <div className="check-quantity">
+                        Quantity:
+                        <form onChange={handleQuantity}>
+                          <select
+                            data-key={item.key}
+                            className="quantity-form"
+                            defaultValue={item.quantity}
+                          >
+                            <option disabled value={item.quantity}>
+                              {item.quantity}
+                            </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                        </form>
+                        <CloseSharpIcon
+                          onClick={handleDelete}
+                          data-key={item.key}
+                          className="delete-item"
+                        />
+                      </div>
                     </div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
         {/*//@ SIDEBAR*/}
         <div id="checkout-sidebar">
@@ -147,7 +162,9 @@ const Checkout = ({ cart, setCart }) => {
             </p>
           </div>
           <div id="check-sb-buttons">
-            <button id="check-sb-checkout">CHECKOUT</button>
+            <button id="check-sb-checkout" onClick={submitOrder}>
+              CHECKOUT
+            </button>
           </div>
         </div>
       </div>
