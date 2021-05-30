@@ -20,7 +20,13 @@ select {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   height: 3em;
-
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
   width: 9em;
   font-size: 1rem;
   margin: 0 2em 0 2em;

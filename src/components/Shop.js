@@ -4,7 +4,14 @@ import '../styles/shop.css';
 import { Link } from 'react-router-dom';
 import FilterBox from './FilterBox';
 
-const Shop = ({ cardsArray }) => {
+const Shop = ({
+  cardsArray,
+  category,
+  hero,
+  gender,
+  categories,
+  setCategories,
+}) => {
   const cards = cardsArray;
   const [filters, setFilters] = useState({
     sort: 'default',
@@ -12,14 +19,19 @@ const Shop = ({ cardsArray }) => {
     type: 'all',
     brand: 'all',
   });
-  const [currentItems, setItems] = useState(cards);
+  // set current items to filtered cards array
+  const [currentItems, setItems] = useState([...cards]);
+
+  useEffect(() => {
+    setItems(cards.filter((item) => item.gender === gender));
+  }, []);
 
   return (
     <div id="shop">
       <div id="shop-gradient">
-        <h1 id="shop-title">WOMEN'S</h1>
+        <h1 id="shop-title">{category}</h1>
       </div>
-      <img id="shop-hero" src="/img/hero2.jpg" alt="hero" />
+      <img id="shop-hero" src={hero} alt="hero" />
       <div id="filter-container">
         <FilterBox
           filters={filters}
@@ -27,6 +39,9 @@ const Shop = ({ cardsArray }) => {
           currentItems={currentItems}
           setItems={setItems}
           cards={cards}
+          gender={gender}
+          categories={categories}
+          setCategories={setCategories}
         />
       </div>
       <div id="shop-section">

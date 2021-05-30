@@ -1,8 +1,20 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/filter-box.css';
+import uniqid from 'uniqid';
 
 const FilterBox = (props) => {
-  const { cards, filters, setFilters, currentItems, setItems } = props;
+  const {
+    cards,
+    filters,
+    setFilters,
+    currentItems,
+    setItems,
+    gender,
+    categories,
+    setCategories,
+  } = props;
+
+  const myRef = useRef('test');
 
   //< SORT ITEMS
 
@@ -10,11 +22,11 @@ const FilterBox = (props) => {
 
   const updateSort = () => {
     if (filters.sort === 'default') {
-      cards.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
+      currentItems.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
     } else if (filters.sort === 'price-asc') {
-      cards.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      currentItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else if (filters.sort === 'price-desc') {
-      cards.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+      currentItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
     }
   };
 
@@ -60,6 +72,7 @@ const FilterBox = (props) => {
     setItems(
       cards.filter(
         (item) =>
+          item.gender === gender &&
           (item.type === filters.type || filters.type === 'all') &&
           (item.color === filters.color || filters.color === 'all') &&
           (item.brand === filters.brand || filters.brand === 'all')
@@ -67,8 +80,27 @@ const FilterBox = (props) => {
     );
   };
 
+  const updateCat = (i, keys) => {
+    const cloneCards = cards.filter((item) => item.gender === gender);
+    setCategories(
+      (prev) => [...prev],
+      {
+        [categories[i]]: ([categories[i][keys]] = [
+          [...new Set(cloneCards.map((item) => item[keys]))],
+        ]),
+      },
+      console.log(categories)
+    );
+  };
+
+  useEffect(() => {
+    for (let i = 0; i < categories.length; i++) {
+      updateCat(i, Object.keys(categories[i])[0]);
+    }
+  }, []);
+
   return (
-    <div className="custom-select" id="filter-box">
+    <div ref={myRef} className="custom-select" id="filter-box">
       <form onChange={handleChange}>
         <select id="sort-form" defaultValue={'none'}>
           <option disabled value="none">
@@ -81,39 +113,41 @@ const FilterBox = (props) => {
       </form>
       <form onChange={handleChange}>
         <select id="color-form" defaultValue={'all'}>
+          <option value="all">Colors</option>
           <option value="all">All Colors</option>
-          <option value="black">Black</option>
-          <option value="white">White</option>
-          <option value="grey">Grey</option>
-          <option value="gold">Gold</option>
-          <option value="blue">Blue</option>
+          {categories[2].color.map((item) => {
+            return (
+              <option key={uniqid()} value={item}>
+                {item}
+              </option>
+            );
+          })}
         </select>
       </form>
       <form onChange={handleChange}>
         <select id="brand-form" defaultValue={'all'}>
+          <option value="all">Brands</option>
           <option value="all">All Brands</option>
-          <option value="Anne Sofie Madsen">Anne Sofie Madsen</option>
-          <option value="Comme De Garcons">Comme De Garcons</option>
-          <option value="Dolce & Gabbana">Dolce & Gabbana</option>
-          <option value="Gucci">Gucci</option>
-          <option value="Jean Paul Gaultier">Jean Paul Gaultier</option>
-          <option value="Luisa Beccaria">Luisa Beccaria</option>
-          <option value="Maison Margiela">Maison Margiela</option>
-          <option value="Manish Arora">Manish Arora</option>
-          <option value="Moschino">Moschino</option>
-          <option value="Simone Rocha">Simone Rocha</option>
-          <option value="Valentino">Valentino</option>
-          <option value="Versace">Versace</option>
-          <option value="Yohji Yamamoto">Yohji Yamamoto</option>
+          {categories[0].brand.map((item) => {
+            return (
+              <option key={uniqid()} value={item}>
+                {item}
+              </option>
+            );
+          })}
         </select>
       </form>
       <form onChange={handleChange}>
         <select id="type-form" defaultValue={'all'}>
+          <option value="all">Types</option>
           <option value="all">All Types</option>
-          <option value="top">Top</option>
-          <option value="bottom">Bottom</option>
-          <option value="shoes">Shoes</option>
-          <option value="accessories">Accessories</option>
+          {categories[1].type.map((item) => {
+            return (
+              <option key={uniqid()} value={item}>
+                {item}
+              </option>
+            );
+          })}
         </select>
       </form>
     </div>

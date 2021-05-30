@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Search from './Search';
 import CartIcon from './CartIcon';
 import LanguageIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
