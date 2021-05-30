@@ -1,0 +1,11 @@
+#hero-about {
+  position: relative;
+  width: 100vw;
+  height: 40em;
+  object-fit: cover;
+  display: block;
+  z-index: -2;
+  object-position: bottom;
+  opacity: 0;
+  animation: fade-in 0.5s forwards;
+}

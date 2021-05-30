@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/filter-box.css';
-import ColorSelect from './forms/ColorSelect';
 
 const FilterBox = (props) => {
   const {
@@ -20,11 +19,11 @@ const FilterBox = (props) => {
 
   const updateSort = () => {
     if (filters.sort === 'default') {
-      currentItems.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
+      cards.sort((a, b) => parseFloat(a.key) - parseFloat(b.key));
     } else if (filters.sort === 'price-asc') {
-      currentItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      cards.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
     } else if (filters.sort === 'price-desc') {
-      currentItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+      cards.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
     }
   };
 

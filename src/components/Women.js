@@ -9,6 +9,7 @@ const Women = ({ cards, categories, setCategories }) => {
         cardsArray={cards}
         category={"WOMEN'S"}
         hero={'/img/hero2.jpg'}
+        heroId={'shop-hero-woman'}
         gender={'women'}
         categories={categories}
         setCategories={setCategories}

@@ -8,7 +8,8 @@ const Men = ({ cards, categories, setCategories }) => {
       <Shop
         cardsArray={cards}
         category={"MEN'S"}
-        hero={'/img/hero2.jpg'}
+        hero={'/img/hero3.jpg'}
+        heroId={'shop-hero-man'}
         gender={'men'}
         categories={categories}
         setCategories={setCategories}

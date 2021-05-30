@@ -25,7 +25,7 @@ const Item = (props) => {
     const errorMessage = document.getElementById('item-error-message');
     errorMessage.style.setProperty('animation', '');
     errorMessage.style.setProperty('opacity', '0');
-    if (size !== '') {
+    if (size !== '' || itemClone.type === 'Accessories') {
       itemClone.quantity = 1;
       //+ IF ITEM DOES NOT EXIST OR IF ITEM EXISTS BUT SIZE DOES NOT
       if (checkItem !== true || findSize !== true) {
@@ -83,14 +83,16 @@ const Item = (props) => {
             onChange={handleChange}
             onSubmit={submitQuantity}
           >
-            <select id="size-form-select" defaultValue={'none'}>
-              <option disabled value="none">
-                Size
-              </option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-            </select>
+            {itemClone.type !== 'Accessories' ? (
+              <select id="size-form-select" defaultValue={'none'}>
+                <option disabled value="none">
+                  Size
+                </option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+              </select>
+            ) : null}
             <button className="submit-button" type="submit">
               ADD TO CART
             </button>

@@ -8,6 +8,7 @@ const Shop = ({
   cardsArray,
   category,
   hero,
+  heroId,
   gender,
   categories,
   setCategories,
@@ -31,7 +32,7 @@ const Shop = ({
       <div id="shop-gradient">
         <h1 id="shop-title">{category}</h1>
       </div>
-      <img id="shop-hero" src={hero} alt="hero" />
+      <img id={heroId} src={hero} alt="hero" />
       <div id="filter-container">
         <FilterBox
           filters={filters}
