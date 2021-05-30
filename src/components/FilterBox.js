@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/filter-box.css';
-import uniqid from 'uniqid';
+import ColorSelect from './forms/ColorSelect';
 
 const FilterBox = (props) => {
   const {
@@ -13,8 +13,6 @@ const FilterBox = (props) => {
     categories,
     setCategories,
   } = props;
-
-  const myRef = useRef('test');
 
   //< SORT ITEMS
 
@@ -65,6 +63,7 @@ const FilterBox = (props) => {
     updateSort();
     updateFilters();
     fade();
+    console.log(categories);
   }, [filters]);
 
   //// FILTER FUNCTION
@@ -82,15 +81,11 @@ const FilterBox = (props) => {
 
   const updateCat = (i, keys) => {
     const cloneCards = cards.filter((item) => item.gender === gender);
-    setCategories(
-      (prev) => [...prev],
-      {
-        [categories[i]]: ([categories[i][keys]] = [
-          [...new Set(cloneCards.map((item) => item[keys]))],
-        ]),
-      },
-      console.log(categories)
-    );
+    setCategories((prev) => [...prev], {
+      [categories[i]]: ([categories[i][keys]] = [
+        [...new Set(cloneCards.map((item) => item[keys]))],
+      ]),
+    });
   };
 
   useEffect(() => {
@@ -100,7 +95,7 @@ const FilterBox = (props) => {
   }, []);
 
   return (
-    <div ref={myRef} className="custom-select" id="filter-box">
+    <div className="custom-select" id="filter-box">
       <form onChange={handleChange}>
         <select id="sort-form" defaultValue={'none'}>
           <option disabled value="none">
@@ -113,11 +108,10 @@ const FilterBox = (props) => {
       </form>
       <form onChange={handleChange}>
         <select id="color-form" defaultValue={'all'}>
-          <option value="all">Colors</option>
           <option value="all">All Colors</option>
           {categories[2].color.map((item) => {
             return (
-              <option key={uniqid()} value={item}>
+              <option key={item} value={item}>
                 {item}
               </option>
             );
@@ -126,11 +120,10 @@ const FilterBox = (props) => {
       </form>
       <form onChange={handleChange}>
         <select id="brand-form" defaultValue={'all'}>
-          <option value="all">Brands</option>
           <option value="all">All Brands</option>
           {categories[0].brand.map((item) => {
             return (
-              <option key={uniqid()} value={item}>
+              <option key={item} value={item}>
                 {item}
               </option>
             );
@@ -139,11 +132,10 @@ const FilterBox = (props) => {
       </form>
       <form onChange={handleChange}>
         <select id="type-form" defaultValue={'all'}>
-          <option value="all">Types</option>
           <option value="all">All Types</option>
           {categories[1].type.map((item) => {
             return (
-              <option key={uniqid()} value={item}>
+              <option key={item} value={item}>
                 {item}
               </option>
             );

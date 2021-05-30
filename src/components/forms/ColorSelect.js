@@ -6,7 +6,6 @@ const ColorSelect = ({
   formType,
   categories,
   setCategories,
-  id,
   gender,
   cards,
 }) => {
@@ -14,32 +13,27 @@ const ColorSelect = ({
 
   const updateCat = (i, keys) => {
     const cloneCards = cards.filter((item) => item.gender === gender);
-    setCategories(
-      (prev) => [...prev],
-      {
-        [categories[i]]: ([categories[i][keys]] = [
-          [...new Set(cloneCards.map((item) => item[keys]))],
-        ]),
-      },
-      console.log(categories)
-    );
+    setCategories((prev) => [...prev], {
+      [categories[i]]: ([categories[i][keys]] = [
+        [...new Set(cloneCards.map((item) => item[keys]))],
+      ]),
+    });
   };
 
   useEffect(() => {
-    for (let i = 0; i < categories.length; i++) {
-      updateCat(i, Object.keys(categories[i])[0]);
+    for (let z = 0; z < categories.length; z++) {
+      updateCat(z, Object.keys(categories[z])[0]);
     }
   }, []);
 
   return (
     <div>
       <form onChange={handleChange}>
-        <select menuIsOpen={true} id="color-form" defaultValue={'all'}>
-          <option value="all">Colors</option>
-          <option value="all">All Colors</option>
+        <select id="color-form" defaultValue={'all'}>
+          <option value="all">{formType}</option>
           {categories[i][formType].map((item) => {
             return (
-              <option key={id} value={item}>
+              <option key={item} value={item}>
                 {item}
               </option>
             );
