@@ -52,7 +52,7 @@
   object-fit: cover;
   display: block;
   z-index: -2;
-  object-position: bottom;
+  object-position: center;
   opacity: 0;
   animation: fade-in 0.5s forwards;
 }
