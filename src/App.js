@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Nav cart={cart} setCart={setCart}></Nav>
+        <Nav cart={cart} setCart={setCart} />
         <Switch>
           <Route exact path="/">
             <Home />
@@ -57,6 +57,7 @@ function App() {
             exact
             path="/shop/item/:title"
             render={(props) => (
+              // eslint-disable-next-line react/jsx-props-no-spreading
               <Item {...props} cards={cards} cart={cart} setCart={setCart} />
             )}
           />

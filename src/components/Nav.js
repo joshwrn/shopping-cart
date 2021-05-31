@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import CartIcon from './CartIcon';
 import LanguageIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
 import { NavLink, Link } from 'react-router-dom';
+import CartIcon from './CartIcon';
 import '../styles/nav.css';
 
 const Nav = (props) => {
@@ -13,7 +13,7 @@ const Nav = (props) => {
     if (cart.length > 0) {
       const cartIcon = document.getElementById('cart-icon');
       cartIcon.style.setProperty('animation', 'bounce 0.8s');
-      setTimeout(function () {
+      setTimeout(() => {
         cartIcon.style.setProperty('animation', '');
       }, 800);
     }
@@ -34,30 +34,27 @@ const Nav = (props) => {
   };
 
   //+ CART FUNCTION
-  const openCart = (e) => {
-    // e.preventDefault();
-    const cart = document.getElementById('cart-outer');
+  const openCart = () => {
+    const cartElement = document.getElementById('cart-outer');
     const cartInner = document.getElementById('cart');
     const navBg = document.getElementById('nav');
     if (cartOpen === false) {
       //@ OPEN CART
       setCartOpen(true);
       cartInner.style.setProperty('height', '25em');
-      cart.style.setProperty('visibility', 'visible');
+      cartElement.style.setProperty('visibility', 'visible');
       navBg.style.setProperty('background-color', 'black');
     } else if (cartOpen === true) {
       //@ CLOSE CART
       setCartOpen(false);
       cartInner.style.setProperty('height', '0em');
-      setTimeout(function () {
-        cart.style.setProperty('visibility', 'hidden');
+      setTimeout(() => {
+        cartElement.style.setProperty('visibility', 'hidden');
       }, 600);
       if (
-        document.body.scrollTop >= 20 ||
-        document.documentElement.scrollTop >= 20
+        !document.body.scrollTop >= 20 ||
+        !document.documentElement.scrollTop >= 20
       ) {
-        return;
-      } else {
         navBg.style.setProperty('background-color', '');
       }
     }

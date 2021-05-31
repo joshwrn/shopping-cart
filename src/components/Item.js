@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/item.css';
-import ScrollToTop from './functions/ScrollToTop';
 import uniqid from 'uniqid';
 import BackIcon from '@material-ui/icons/TrendingFlat';
+import ScrollToTop from './functions/ScrollToTop';
 
 const Item = (props) => {
   const { match, cards, cart, setCart } = props;
@@ -67,12 +67,13 @@ const Item = (props) => {
     <div id="item-page">
       <ScrollToTop />
       <div id="item-inner">
-        <div id="item-gradient"></div>
+        <div id="item-gradient" />
         <img id="item-page-image" src={itemClone.src} alt="one" />
         <div id="item-page-details">
           <p id="item-brand">{itemClone.brand}</p>
           <p id="item-page-title">
-            {itemClone.title} <BackIcon id="back-icon" onClick={goBack} />
+            {itemClone.title}
+            <BackIcon id="back-icon" onClick={goBack} />
           </p>
           <p id="item-page-price">
             ${Number(itemClone.price).toLocaleString('en-US')}
@@ -84,7 +85,7 @@ const Item = (props) => {
             onSubmit={submitQuantity}
           >
             {itemClone.type !== 'Accessories' ? (
-              <select id="size-form-select" defaultValue={'none'}>
+              <select id="size-form-select" defaultValue="none">
                 <option disabled value="none">
                   Size
                 </option>

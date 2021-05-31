@@ -7,7 +7,7 @@ const Cart = (props) => {
   const { click, cart } = props;
 
   const totalPrice = cart.reduce((add, item) => {
-    let next = parseFloat(
+    const next = parseFloat(
       (Number(item.price) * Number(item.quantity)).toFixed(2)
     );
     return parseFloat(Number(add) + Number(next)).toFixed(2);
@@ -30,7 +30,7 @@ const Cart = (props) => {
                 minimumFractionDigits: 2,
               })}
             </p>
-          </div>{' '}
+          </div>
           <div id="cart-scroll">
             <ul id="cart-list">
               {cart.map((item) => {

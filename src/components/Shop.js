@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
 import '../styles/shop.css';
 import { Link } from 'react-router-dom';
+import Card from './Card';
 import FilterBox from './FilterBox';
 import ScrollToTop from './functions/ScrollToTop';
 

@@ -7,10 +7,10 @@ const Women = ({ cards, categories, setCategories }) => {
     <div id="women">
       <Shop
         cardsArray={cards}
-        category={"WOMEN'S"}
-        hero={'/img/hero2.jpg'}
-        heroId={'shop-hero-woman'}
-        gender={'women'}
+        category="WOMEN'S"
+        hero="/img/hero2.jpg"
+        heroId="shop-hero-woman"
+        gender="women"
         categories={categories}
         setCategories={setCategories}
       />

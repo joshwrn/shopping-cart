@@ -32,7 +32,7 @@ const FilterBox = (props) => {
     const shop = document.getElementById('shop-section');
     shop.style.setProperty('opacity', '0');
     shop.style.setProperty('animation', '');
-    setTimeout(function () {
+    setTimeout(() => {
       shop.style.setProperty('animation', 'fade-in 1.3s forwards');
     }, 0);
   };
@@ -46,8 +46,8 @@ const FilterBox = (props) => {
     const sortForm = document.getElementById('sort-form');
 
     e.preventDefault();
-    setFilters((filters) => ({
-      ...filters,
+    setFilters((arr) => ({
+      ...arr,
       sort: sortForm.value,
       type: typeForm.value,
       brand: brandForm.value,
@@ -96,7 +96,7 @@ const FilterBox = (props) => {
   return (
     <div className="custom-select" id="filter-box">
       <form onChange={handleChange}>
-        <select id="sort-form" defaultValue={'none'}>
+        <select id="sort-form" defaultValue="none">
           <option disabled value="none">
             Sort
           </option>
@@ -106,7 +106,7 @@ const FilterBox = (props) => {
         </select>
       </form>
       <form onChange={handleChange}>
-        <select id="color-form" defaultValue={'all'}>
+        <select id="color-form" defaultValue="all">
           <option value="all">All Colors</option>
           {categories[2].color.map((item) => {
             return (
@@ -118,7 +118,7 @@ const FilterBox = (props) => {
         </select>
       </form>
       <form onChange={handleChange}>
-        <select id="brand-form" defaultValue={'all'}>
+        <select id="brand-form" defaultValue="all">
           <option value="all">All Brands</option>
           {categories[0].brand.map((item) => {
             return (
@@ -130,7 +130,7 @@ const FilterBox = (props) => {
         </select>
       </form>
       <form onChange={handleChange}>
-        <select id="type-form" defaultValue={'all'}>
+        <select id="type-form" defaultValue="all">
           <option value="all">All Types</option>
           {categories[1].type.map((item) => {
             return (

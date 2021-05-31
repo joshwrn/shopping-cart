@@ -11,7 +11,7 @@ const Checkout = ({ cart, setCart }) => {
 
   //+ SUB TOTAL
   const subTotal = cart.reduce((add, item) => {
-    let next = parseFloat(
+    const next = parseFloat(
       (Number(item.price) * Number(item.quantity)).toFixed(2)
     );
     return parseFloat(Number(add) + Number(next)).toFixed(2);

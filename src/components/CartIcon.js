@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Badge from '@material-ui/core/Badge';
 import Cart from './Cart';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   badge: {
     transform: 'scale(0.8) translate(50%, -50%)',
   },
