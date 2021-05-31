@@ -1,5 +1,6 @@
 import React from 'react';
 import Shop from './Shop';
+import hero from '../assets/img/hero2.jpg';
 import '../styles/women.css';
 
 const Women = ({ cards, categories, setCategories }) => {
@@ -8,7 +9,7 @@ const Women = ({ cards, categories, setCategories }) => {
       <Shop
         cardsArray={cards}
         category="WOMEN'S"
-        hero="/img/hero2.jpg"
+        hero={hero}
         heroId="shop-hero-woman"
         gender="women"
         categories={categories}

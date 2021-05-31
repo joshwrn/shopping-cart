@@ -4,6 +4,7 @@ import '../styles/checkout.css';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import OrderSuccess from './OrderSuccess';
 import ScrollToTop from './functions/ScrollToTop';
+import hero from '../assets/img/hero.jpg';
 
 const Checkout = ({ cart, setCart }) => {
   const [final, setFinal] = useState(0);
@@ -66,7 +67,7 @@ const Checkout = ({ cart, setCart }) => {
       <div id="check-gradient">
         <h1 id="check-title">SHOPPING CART</h1>
       </div>
-      <img id="check-hero" src="/img/hero.jpg" alt="hero" />
+      <img id="check-hero" src={hero} alt="hero" />
       <div id="checkout-section">
         <div id="list-container">
           {orderStatus ? (

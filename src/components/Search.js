@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/search.css';
+import hero from '../assets/img/search.jpg';
 
 const Search = ({ cards }) => {
   const [input, setInput] = useState('');
@@ -32,7 +33,7 @@ const Search = ({ cards }) => {
       <div id="check-gradient">
         <h1 id="check-title">SEARCH</h1>
       </div>
-      <img id="search-hero" src="/img/search.jpg" alt="hero" />
+      <img id="search-hero" src={hero} alt="hero" />
       <div id="search-section">
         <form>
           <input

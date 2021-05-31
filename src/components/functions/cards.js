@@ -1,7 +1,41 @@
+import one from '../../assets/img/clothes/w/one.jpeg';
+import two from '../../assets/img/clothes/w/two.jpeg';
+import three from '../../assets/img/clothes/w/three.jpeg';
+import four from '../../assets/img/clothes/w/four.jpeg';
+import five from '../../assets/img/clothes/w/five.jpeg';
+import six from '../../assets/img/clothes/w/six.jpeg';
+import seven from '../../assets/img/clothes/w/seven.jpeg';
+import eight from '../../assets/img/clothes/w/8.jpeg';
+import nine from '../../assets/img/clothes/w/9.jpeg';
+import eleven from '../../assets/img/clothes/w/11.jpeg';
+import twelve from '../../assets/img/clothes/w/12.jpeg';
+import thirteen from '../../assets/img/clothes/w/13.jpeg';
+import fourteen from '../../assets/img/clothes/w/14.jpeg';
+import fifteen from '../../assets/img/clothes/w/15.jpeg';
+import sixteen from '../../assets/img/clothes/w/16.jpeg';
+import seventeen from '../../assets/img/clothes/w/17.jpeg';
+import eighteen from '../../assets/img/clothes/w/18.jpeg';
+import nineteen from '../../assets/img/clothes/w/19.jpeg';
+import mOne from '../../assets/img/clothes/m/jean paul gaultier shirt.jpeg';
+import mTwo from '../../assets/img/clothes/m/Alexander McQueen Fall 2016.jpeg';
+import mThree from '../../assets/img/clothes/m/balenciaga light shoes.jpeg';
+import mFour from '../../assets/img/clothes/m/Burberry Spring 2019.jpeg';
+import mFive from '../../assets/img/clothes/m/Dolce & Gabbana Fall 2015.jpeg';
+import mSix from '../../assets/img/clothes/m/Dries Van Noten Fall 2016.jpeg';
+import mSeven from '../../assets/img/clothes/m/Gucci AW15.jpeg';
+import mEight from '../../assets/img/clothes/m/nike shoes.jpeg';
+import mNine from '../../assets/img/clothes/m/raf coat.jpeg';
+import mTen from '../../assets/img/clothes/m/Raf Simons Men’s Fall 2018.jpeg';
+import mEleven from '../../assets/img/clothes/m/Raf Simons Spring 2015.jpeg';
+import mTwelve from '../../assets/img/clothes/m/UNDERCOVER 2016.jpeg';
+import mThirteen from '../../assets/img/clothes/m/undercover backpack.jpeg';
+import mFourteen from '../../assets/img/clothes/m/UNDERCOVER2020.jpeg';
+import mFifteen from '../../assets/img/clothes/m/Yohji Yamamoto Spring 2018.jpeg';
+
 const cards = [
   {
     title: 'Black Snake Dress',
-    src: '/img/clothes/w/one.jpeg',
+    src: one,
     price: '1849.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -12,7 +46,7 @@ const cards = [
   },
   {
     title: 'Tattered Silk Coat',
-    src: '/img/clothes/w/two.jpeg',
+    src: two,
     price: '1379.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -23,7 +57,7 @@ const cards = [
   },
   {
     title: 'Royal Gold Gown',
-    src: '/img/clothes/w/three.jpeg',
+    src: three,
     price: '859.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -34,7 +68,7 @@ const cards = [
   },
   {
     title: 'Fine Ripped Shirt',
-    src: '/img/clothes/w/four.jpeg',
+    src: four,
     price: '1319.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -45,7 +79,7 @@ const cards = [
   },
   {
     title: 'Renaissance Dress',
-    src: '/img/clothes/w/five.jpeg',
+    src: five,
     price: '2899.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -56,7 +90,7 @@ const cards = [
   },
   {
     title: 'Black Buttoned Overcoat',
-    src: '/img/clothes/w/six.jpeg',
+    src: six,
     price: '659.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -67,7 +101,7 @@ const cards = [
   },
   {
     title: 'Black Layered Top',
-    src: '/img/clothes/w/seven.jpeg',
+    src: seven,
     price: '779.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -78,7 +112,7 @@ const cards = [
   },
   {
     title: 'White Bracelet Sneakers',
-    src: '/img/clothes/w/8.jpeg',
+    src: eight,
     price: '579.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -89,7 +123,7 @@ const cards = [
   },
   {
     title: 'Gold and Black Heels',
-    src: '/img/clothes/w/9.jpeg',
+    src: nine,
     price: '739.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -101,7 +135,7 @@ const cards = [
 
   {
     title: 'Gold and Pink Floral Heels',
-    src: '/img/clothes/w/11.jpeg',
+    src: eleven,
     price: '1239.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -112,7 +146,7 @@ const cards = [
   },
   {
     title: 'Stitched Mouse Top',
-    src: '/img/clothes/w/12.jpeg',
+    src: twelve,
     price: '669.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -123,7 +157,7 @@ const cards = [
   },
   {
     title: 'Black Emblem Bag',
-    src: '/img/clothes/w/13.jpeg',
+    src: thirteen,
     price: '279.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -134,7 +168,7 @@ const cards = [
   },
   {
     title: 'Glitter Skull Bag',
-    src: '/img/clothes/w/14.jpeg',
+    src: fourteen,
     price: '339.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -145,7 +179,7 @@ const cards = [
   },
   {
     title: 'Portrait Bag',
-    src: '/img/clothes/w/15.jpeg',
+    src: fifteen,
     price: '489.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -156,7 +190,7 @@ const cards = [
   },
   {
     title: 'Gold Bow Heels',
-    src: '/img/clothes/w/16.jpeg',
+    src: sixteen,
     price: '1239.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -167,7 +201,7 @@ const cards = [
   },
   {
     title: 'Black Lace Dress',
-    src: '/img/clothes/w/17.jpeg',
+    src: seventeen,
     price: '2579.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -178,7 +212,7 @@ const cards = [
   },
   {
     title: 'Aged Snake Bag',
-    src: '/img/clothes/w/18.jpeg',
+    src: eighteen,
     price: '899.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -189,7 +223,7 @@ const cards = [
   },
   {
     title: 'Transparent Stitched Dress',
-    src: '/img/clothes/w/19.jpeg',
+    src: nineteen,
     price: '1529.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -200,7 +234,7 @@ const cards = [
   },
   {
     title: 'Red Faces Shirt',
-    src: '/img/clothes/m/jean paul gaultier shirt.jpeg',
+    src: mOne,
     price: '2529.99',
     description: ' Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -211,7 +245,7 @@ const cards = [
   },
   {
     title: 'Butterfly Suit',
-    src: '/img/clothes/m/Alexander McQueen Fall 2016.jpeg',
+    src: mTwo,
     price: '979.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -222,7 +256,7 @@ const cards = [
   },
   {
     title: 'Balenciaga Boots',
-    src: '/img/clothes/m/balenciaga light shoes.jpeg',
+    src: mThree,
     price: '779.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -233,7 +267,7 @@ const cards = [
   },
   {
     title: 'Burberry Jacket',
-    src: '/img/clothes/m/Burberry Spring 2019.jpeg',
+    src: mFour,
     price: '779.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -244,7 +278,7 @@ const cards = [
   },
   {
     title: 'Gold Leaf Jacket',
-    src: '/img/clothes/m/Dolce & Gabbana Fall 2015.jpeg',
+    src: mFive,
     price: '3779.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -255,7 +289,7 @@ const cards = [
   },
   {
     title: 'Snake Coat',
-    src: '/img/clothes/m/Dries Van Noten Fall 2016.jpeg',
+    src: mSix,
     price: '3779.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -266,7 +300,7 @@ const cards = [
   },
   {
     title: 'Bee Pin',
-    src: '/img/clothes/m/Gucci AW15.jpeg',
+    src: mSeven,
     price: '279.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -277,7 +311,7 @@ const cards = [
   },
   {
     title: 'React Shoes',
-    src: '/img/clothes/m/nike shoes.jpeg',
+    src: mEight,
     price: '349.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Shoes',
@@ -288,7 +322,7 @@ const cards = [
   },
   {
     title: 'Portrait Jacket',
-    src: '/img/clothes/m/raf coat.jpeg',
+    src: mNine,
     price: '6349.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -299,7 +333,7 @@ const cards = [
   },
   {
     title: 'Red Girl Shirt',
-    src: '/img/clothes/m/Raf Simons Men’s Fall 2018.jpeg',
+    src: mTen,
     price: '1349.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -310,7 +344,7 @@ const cards = [
   },
   {
     title: 'RS Pink Jacket',
-    src: '/img/clothes/m/Raf Simons Spring 2015.jpeg',
+    src: mEleven,
     price: '1149.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -321,7 +355,7 @@ const cards = [
   },
   {
     title: 'Playing Card Pants',
-    src: '/img/clothes/m/UNDERCOVER 2016.jpeg',
+    src: mTwelve,
     price: '949.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Bottom',
@@ -332,7 +366,7 @@ const cards = [
   },
   {
     title: 'Castle Backpack',
-    src: '/img/clothes/m/undercover backpack.jpeg',
+    src: mThirteen,
     price: '699.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Accessories',
@@ -343,7 +377,7 @@ const cards = [
   },
   {
     title: 'Black Portrait Jacket',
-    src: '/img/clothes/m/UNDERCOVER2020.jpeg',
+    src: mFourteen,
     price: '1299.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
@@ -354,7 +388,7 @@ const cards = [
   },
   {
     title: 'Face Long Sleeve',
-    src: '/img/clothes/m/Yohji Yamamoto Spring 2018.jpeg',
+    src: mFifteen,
     price: '699.99',
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     type: 'Top',
