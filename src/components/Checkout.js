@@ -52,7 +52,6 @@ const Checkout = ({ cart, setCart }) => {
   };
 
   //+ HANDLE ORDER
-
   const submitOrder = (e) => {
     e.preventDefault();
     if (cart.length > 0) {
