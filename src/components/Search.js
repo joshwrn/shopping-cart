@@ -37,7 +37,7 @@ const Search = ({ cards }) => {
       <div id="check-gradient">
         <h1 id="check-title">SEARCH</h1>
       </div>
-      <img id="check-hero" src="/img/hero.jpg" alt="hero" />
+      <img id="search-hero" src="/img/search.jpg" alt="hero" />
       <div id="search-section">
         <form onSubmit={handleSubmit}>
           <input

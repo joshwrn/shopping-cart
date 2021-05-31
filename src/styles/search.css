@@ -17,6 +17,18 @@
   padding: 0 10em;
 }
 
+#search-hero {
+  position: relative;
+  width: 100vw;
+  height: 20em;
+  object-fit: cover;
+  display: block;
+  z-index: -2;
+  object-position: middle;
+  opacity: 0;
+  animation: fade-in 0.5s forwards;
+}
+
 /*+ INPUT BOX */
 
 #search-box {
