@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.bbabb05a.chunk.css",
+    "main.js": "/shopping-cart/static/js/main.84978c65.chunk.js",
+    "main.js.map": "/shopping-cart/static/js/main.84978c65.chunk.js.map",
+    "runtime-main.js": "/shopping-cart/static/js/runtime-main.8fe60f94.js",
+    "runtime-main.js.map": "/shopping-cart/static/js/runtime-main.8fe60f94.js.map",
+    "static/js/2.3f8841ab.chunk.js": "/shopping-cart/static/js/2.3f8841ab.chunk.js",
+    "static/js/2.3f8841ab.chunk.js.map": "/shopping-cart/static/js/2.3f8841ab.chunk.js.map",
+    "index.html": "/shopping-cart/index.html",
+    "static/css/main.bbabb05a.chunk.css.map": "/shopping-cart/static/css/main.bbabb05a.chunk.css.map",
+    "static/js/2.3f8841ab.chunk.js.LICENSE.txt": "/shopping-cart/static/js/2.3f8841ab.chunk.js.LICENSE.txt",
+    "static/media/shop.css": "/shopping-cart/static/media/Futura-Light-Regular.098a3201.otf",
+    "static/media/styles.css": "/shopping-cart/static/media/VIOLA.fa3cc5cd.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8fe60f94.js",
+    "static/js/2.3f8841ab.chunk.js",
+    "static/css/main.bbabb05a.chunk.css",
+    "static/js/main.84978c65.chunk.js"
+  ]
+}
