@@ -1,5 +1,14 @@
 /*! SHOP */
 
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @font-face {
   font-family: light;
   src: url(../fonts/Futura-Light-Regular.otf);
