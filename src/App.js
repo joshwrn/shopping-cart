@@ -3,7 +3,6 @@ import './styles/styles.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Nav from './components/Nav';
-import Shop from './components/Shop';
 import Women from './components/Women';
 import Men from './components/Men';
 import About from './components/About';

@@ -21,17 +21,14 @@ const Checkout = ({ cart, setCart }) => {
   const tax = parseFloat((subTotal / 7.25).toFixed(2));
 
   //+ SET FINAL TOTAL
-  const findTotal = () => {
+
+  useEffect(() => {
     if (cart.length > 0) {
       setFinal(parseFloat((Number(subTotal) + Number(tax) + 15).toFixed(2)));
     } else {
       setFinal(0);
     }
-  };
-
-  useEffect(() => {
-    findTotal();
-  }, [cart]);
+  }, [cart, tax, subTotal]);
 
   //+ UPDATE QUANTITY
 

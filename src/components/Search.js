@@ -14,18 +14,13 @@ const Search = ({ cards }) => {
     );
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    search(input);
-  };
-
   useEffect(() => {
     setResults([]);
   }, []);
 
   useEffect(() => {
-    console.log(results);
     search(input);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [input]);
 
   const handleChange = (e) => {
@@ -39,7 +34,7 @@ const Search = ({ cards }) => {
       </div>
       <img id="search-hero" src="/img/search.jpg" alt="hero" />
       <div id="search-section">
-        <form onSubmit={handleSubmit}>
+        <form>
           <input
             id="search-box"
             type="text"
@@ -51,7 +46,7 @@ const Search = ({ cards }) => {
         {/* LIST */}
         <ul id="check-list">
           <p id="current-search">
-            "{results.length !== 33 ? input : 'all'}" ({results.length})
+            "{input === '' ? 'all' : input}" ({results.length})
           </p>
           {results.map((item) => {
             return (

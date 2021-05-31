@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import '../styles/cart.css';
 import { Link } from 'react-router-dom';
 
 const Cart = (props) => {
-  const { click, cart, setCart } = props;
+  const { click, cart } = props;
 
   const totalPrice = cart.reduce((add, item) => {
     let next = parseFloat(

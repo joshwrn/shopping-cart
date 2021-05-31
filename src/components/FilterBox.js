@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import '../styles/filter-box.css';
 
 const FilterBox = (props) => {
@@ -6,7 +6,6 @@ const FilterBox = (props) => {
     cards,
     filters,
     setFilters,
-    currentItems,
     setItems,
     gender,
     categories,
@@ -62,7 +61,7 @@ const FilterBox = (props) => {
     updateSort();
     updateFilters();
     fade();
-    console.log(categories);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters]);
 
   //// FILTER FUNCTION
@@ -91,6 +90,7 @@ const FilterBox = (props) => {
     for (let i = 0; i < categories.length; i++) {
       updateCat(i, Object.keys(categories[i])[0]);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

@@ -3,6 +3,7 @@ import Card from './Card';
 import '../styles/shop.css';
 import { Link } from 'react-router-dom';
 import FilterBox from './FilterBox';
+import ScrollToTop from './functions/ScrollToTop';
 
 const Shop = ({
   cardsArray,
@@ -20,15 +21,16 @@ const Shop = ({
     type: 'all',
     brand: 'all',
   });
-  // set current items to filtered cards array
   const [currentItems, setItems] = useState([...cards]);
 
   useEffect(() => {
     setItems(cards.filter((item) => item.gender === gender));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div id="shop">
+      <ScrollToTop />
       <div id="shop-gradient">
         <h1 id="shop-title">{category}</h1>
       </div>
