@@ -92,7 +92,7 @@ const Nav = (props) => {
         <h1 id="logo">BRAND</h1>
         {/*//+ links */}
         <ul className="nav-links">
-          <NavLink exact to="/">
+          <NavLink exact to="/shopping-cart">
             <li className="nav-page">Home</li>
           </NavLink>
           <NavLink to="/women">

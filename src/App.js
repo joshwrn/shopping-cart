@@ -32,7 +32,7 @@ function App() {
         <div className="App">
           <Nav cart={cart} setCart={setCart} />
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/shopping-cart/">
               <Home />
             </Route>
             <Route exact path="/women">
