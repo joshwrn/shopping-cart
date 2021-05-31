@@ -210,7 +210,9 @@ span {
 }
 
 #check-sb-checkout {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.5s;
   border: none;
   background-color: rgb(0, 0, 0);

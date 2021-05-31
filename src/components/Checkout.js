@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/checkout.css';
 import CloseSharpIcon from '@material-ui/icons/CloseSharp';
 import OrderSuccess from './OrderSuccess';
+import ScrollToTop from './functions/ScrollToTop';
 
 const Checkout = ({ cart, setCart }) => {
   const [final, setFinal] = useState(0);
@@ -64,6 +65,7 @@ const Checkout = ({ cart, setCart }) => {
 
   return (
     <div id="checkout">
+      <ScrollToTop />
       <div id="check-gradient">
         <h1 id="check-title">SHOPPING CART</h1>
       </div>

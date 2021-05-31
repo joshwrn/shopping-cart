@@ -3,7 +3,7 @@ import Search from './Search';
 import CartIcon from './CartIcon';
 import LanguageIcon from '@material-ui/icons/GitHub';
 import SearchIcon from '@material-ui/icons/Search';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../styles/nav.css';
 
 const Nav = (props) => {
@@ -112,7 +112,9 @@ const Nav = (props) => {
       <div id="nav-right">
         {/*//+ cart */}
         <CartIcon cart={cart} setCart={setCart} click={openCart} />
-        <SearchIcon id="search-icon" />
+        <Link to="/search">
+          <SearchIcon id="search-icon" />
+        </Link>
       </div>
     </div>
   );
