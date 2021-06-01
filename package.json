@@ -1,6 +1,6 @@
 {
   "name": "shopping-cart",
-  "homepage": "https://joshwrn.github.io/shopping-cart/",
+  "homepage": "http://joshwrn.github.io/shopping-cart/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

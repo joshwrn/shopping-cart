@@ -1,6 +1,6 @@
 # Front-end React Web Store
 
-# [Live Demo](http://github.com)
+# [Live Demo](https://joshwrn.github.io/shopping-cart/)
 
 Fully created from scratch in about 10 days. (besides create-react-app)
 
