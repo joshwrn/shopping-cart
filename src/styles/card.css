@@ -36,7 +36,7 @@
 }
 
 .outer-card:hover > .card > .card-bottom {
-  opacity: 100%;
+  opacity: 1;
 }
 
 /*+ IMAGE */
@@ -73,7 +73,7 @@
   width: 20em;
   height: 11em;
   z-index: 1;
-  opacity: 0%;
+  opacity: 0;
   transition: opacity 1s;
   justify-content: center;
 }
@@ -125,5 +125,5 @@
 }
 
 .card-under > .item-price {
-  opacity: 80%;
+  opacity: 0.8;
 }
