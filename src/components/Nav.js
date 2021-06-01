@@ -52,9 +52,11 @@ const Nav = (props) => {
         cartElement.style.setProperty('visibility', 'hidden');
       }, 600);
       if (
-        !document.body.scrollTop >= 20 ||
-        !document.documentElement.scrollTop >= 20
+        document.body.scrollTop >= 20 ||
+        document.documentElement.scrollTop >= 20
       ) {
+        return;
+      } else {
         navBg.style.setProperty('background-color', '');
       }
     }
